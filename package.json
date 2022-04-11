@@ -1,0 +1,22 @@
+{
+  "name": "bazabas_barbara_1_code_042022",
+  "version": "1.0.0",
+  "description": "sass project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch ./sass/main.scss:./css/style.css --style compressed",
+    "prefix": "postcss ./css/style.css --use autoprefixer -d ./css/prefixed/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BarbaraBZBS/p3_BBZBS_ohmyfood.git"
+  },
+  "author": "Barbara Bazabas",
+  "license": "ISC",
+  "browserslist": "last 4 versions",
+  "bugs": {
+    "url": "https://github.com/BarbaraBZBS/p3_BBZBS_ohmyfood/issues"
+  },
+  "homepage": "https://github.com/BarbaraBZBS/p3_BBZBS_ohmyfood#readme"
+}
