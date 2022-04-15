@@ -1,0 +1,345 @@
+/*variables*/
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+$color-black: #101010;
+$color-lblack: #353535;
+$color-white: #FFF;
+$color-grey: #EAEAEA;
+$color-lgrey: #f6f6f6;
+$color-llgrey: #fbfbfb;
+$color-dgrey: #959595;
+
+$base-font-size: 14px;
+
+/*lists*/
+$purpgradient: $color-secondary 0%, $color-primary 98%, $color-primary 100%;
+$pinkgradient: $color-secondary 0%, $color-secondary 16%, $color-primary 100%;
+
+/*maps*/
+$font-size: (lfont: 2.1rem, medfont: 1.5rem, smfont: 1.3rem, xsmfont: 1.2rem, iconfont: 1.3rem);
+$clamps: (smfont-cl: clamp(0.4rem, 8vw, 1.3rem), xxsmfont-cl: clamp(0.4rem, 6vw, 1rem), xsmfont-cl: clamp(0.4rem, 7vw, 1.2rem), mfont-cl: clamp(0.5rem, 8vw , 1.5rem), lfont-cl: clamp(1.2rem, 10vw, 2.1rem));
+$padding: (lpad: 40px, medpad: 21px, smpad: 16px, xsmpad: 5px);
+$margin: (medmarg: 32px, lmarg: 40px, smmarg: 20px, xsmmarg: 10px, mlmarg: 50px, xlmarg: 65px);
+$margin-trbl: (ttl1: 22.5px 65px, par1: 24px 32px 40px 32px, ttl2: 28px 0 40px 20px, ttl3: 65px 0 40px 20px, ftrimg: 28px 0 15px 28px);
+$font-fam: (shr: 'Shrikhand', rob: 'Roboto');
+$box-shadow: (crd: 0 6px 16px -5px rgba(0, 0, 0, 0.2), buttn: 0 4px 8px 0 rgba(0, 0, 0, 0.3), headr: 0 0 9px rgba(0, 0, 0, 0.3), buttnhovr: 0 5px 8px 0 rgba(0, 0, 0, 0.4));
+
+/*functions*/
+@use "sass:math";
+
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return math.div($number, $number * 0 + 1);
+    }
+    @return $number;
+}
+
+@function em($size, $base: $base-font-size) {
+    @return math.div(1em * $size, strip-unit($base));
+};
+
+/*mixins*/
+@mixin gradient($direction, $list) {
+    background: linear-gradient($direction, $list);
+}
+
+#main_wrapper {
+    /*max-width: 1920px;*/
+    padding: 0;
+    margin: 0;
+    font-family: map-get($font-fam, rob), sans-serif;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: $color-white;
+}
+
+ul {
+    list-style: none;
+}
+
+.header {
+    display: flex;
+    height: 95px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    padding-top: map-get($padding, xsmpad);
+    box-shadow: map-get($box-shadow, headr);
+    &__img {
+        width: 64%;
+        min-width: 180px;
+        max-width: 270px;
+    }
+    &__btn {
+        position: absolute;
+        align-content: center;
+        left: 25px;
+        font-size: map-get($font-size, medfont);
+        border: none;
+        background: $color-white;
+        a {
+            color: $color-black;
+        }        
+    }
+}
+
+.locate-form {
+    display: flex;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+    background: $color-grey;
+    width: 100%;
+    &__btn {
+        border: none;
+        background: $color-grey;
+        margin-right:  em(8);
+        font-size: map-get($clamps, smfont-cl);
+    }
+    &__input {
+        border: none;
+        background: $color-grey;
+        font-weight: 500;
+        font-size: map-get($clamps, xsmfont-cl);
+        text-indent: 0.5rem;
+        line-height: 1.9rem;
+    }
+}
+
+.explore-intro {
+    padding-top: map-get($padding, medpad);
+    justify-content: center;
+    height: auto;
+
+    h1 {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-size: map-get($font-size, lfont);
+        font-weight: 900;
+        line-height: 2.35rem;
+        margin: map-get($margin-trbl, ttl1);
+    }
+    p {
+        display: flex;
+        justify-content: center;
+        font-size: map-get($font-size, medfont);
+        color: $color-dgrey;
+        margin: map-get($margin-trbl, par1);
+        text-align: center;
+    }
+    &__btn {
+        display: flex;
+        justify-content: center;
+        button {
+            justify-content: center;
+            font-size: map-get($font-size, smfont);
+            justify-content: center;
+            background: $color-primary;
+            text-align: center;
+            justify-items: center;
+            border: none;
+            border-radius: 30px;
+            margin-bottom: 2.5rem;
+            padding: map-get($padding, smpad) 25px;
+            box-shadow: map-get($box-shadow, buttn);
+            @include gradient(to right bottom, $purpgradient);
+            &:hover {
+                @include gradient(to right bottom, $pinkgradient);
+                box-shadow: map-get($box-shadow, buttnhovr);
+            }
+        }
+    }
+}
+
+.pres-section {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: map-get($padding, lpad);
+    h2{
+        font-size: map-get($clamps, lfont-cl);
+        font-weight: 900;
+        margin: map-get($margin-trbl, ttl2);
+    }
+}
+.pres-section .cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pres-section .card {
+    display: flex;
+    flex-direction: row;
+    background: $color-llgrey;
+    margin-bottom: map-get($margin, medmarg);
+    width: 90%;
+    height: 85px;
+    min-width: auto;
+    max-width: 460px;
+    border-radius: 30px;
+    align-items: center;
+    align-self: center;
+    font-size: map-get($font-size, medfont);
+    box-shadow: map-get($box-shadow, crd);
+    &__number {
+        display: flex;
+        margin: -5px;
+        p {
+            background: $color-primary;
+            border-radius: 30px;
+            height: 26px;
+            width: 26px;
+            text-align: center;
+            margin: -4px;
+            font-size: 17px;
+            color: $color-white;
+        }
+    }
+    &__icon {
+        display: flex;
+        color: $color-dgrey;
+        margin: 0 10%;
+    }
+    &__instruct {
+        display: flex;
+        font-size: map-get($clamps, smfont-cl);
+        font-weight: 600;
+    }
+    &:hover {
+        cursor: pointer;
+        background: lighten($color: $color-primary, $amount: 35);
+        .card__icon {
+            color: $color-primary;
+        }
+    }
+}
+
+.restaur-section {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: map-get($padding, lpad);
+    background: $color-lgrey;
+    h2 {
+        font-size: map-get($clamps, lfont-cl);
+        font-weight: 900;
+        margin: map-get($margin-trbl, ttl3);
+    }
+}
+
+.restaur-section .cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.restaur-section .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    background: $color-white;
+    border-radius: 30px;
+    width: 90%;
+    min-width: 160px;
+    max-width: 996px;
+    height: 290px;
+    align-self: center;
+    margin-bottom: map-get($margin, medmarg);
+    box-shadow: 0 6px 16px -5px rgba(0, 0, 0, 0.2) ;
+    a {
+        height: 290px;
+    }
+    &__img {
+        width: 100%;
+        height: 200px;
+        padding: 0;
+        margin: 0;
+        img {
+            object-fit: cover;
+            height: 200px;
+            width: 100%;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+        }
+        .new {
+            position: absolute;
+            color: darken($color: $color-tertiary, $amount: 34);
+            font-weight: 600;
+            padding: 6px map-get($padding, xsmpad) +5px ;
+            right: 20px;
+            top: 5px;
+            background: $color-tertiary;
+            border-radius: 3px;
+        }
+    }
+    &__body {
+        display: flex;
+        height: 90px;
+    }
+    &__info {
+        color: $color-black;
+        width: 80%;
+        margin: 15px;
+        h3 {
+            font-weight: 600;
+            font-size: map-get($clamps, smfont-cl);
+            margin: 0 0 5px 0;
+        }
+        p {
+            font-size: map-get($clamps, xsmfont-cl);
+            margin: 0;
+        }
+    }
+    &__fav {
+        width: 20%;
+        align-self: center;
+        text-align: center;
+        button {
+            border: none;
+            background: $color-white;
+            i {
+                font-size: map-get($clamps, mfont-cl);
+            }
+        }
+    }
+}
+
+
+footer {
+    background-color: $color-lblack;
+    height: 200px;
+    width: 100%;  
+    img {
+        filter: invert(1);
+        width: 28%;
+        margin: map-get($margin-trbl, ftrimg);
+        min-width: 138px;
+        max-width: 160px;     
+    }
+    ul {
+        margin: 0;
+        li {
+            margin-bottom: 7px;
+            font-size: map-get($clamps, xxsmfont-cl);
+        }
+    }
+    a {
+        color: $color-white;
+    }
+    .fa-utensils {
+        margin-right: 18px;
+        font-size: 0.9rem;
+    }
+    .fa-handshake-angle {
+        margin-right: 14px;
+        font-size: 0.8rem;
+    }
+}
