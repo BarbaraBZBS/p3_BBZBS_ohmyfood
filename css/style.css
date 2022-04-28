@@ -3,11 +3,19 @@
 /*maps*/
 /*functions*/
 /*mixins*/
-#main_wrapper {
+#homepage-main_wrapper, #lddspage-main_wrapper, #alfpage-main_wrapper, #nepage-main_wrapper, #pgpage-main_wrapper {
   /*max-width: 1920px;*/
   padding: 0;
   margin: 0;
   font-family: "Roboto", sans-serif;
+}
+
+#pgpage-main_wrapper main {
+  max-height: 1816px;
+}
+
+#nepage-main_wrapper main {
+  max-height: 1905px;
 }
 
 button {
@@ -26,7 +34,6 @@ ul {
 .header {
   display: flex;
   height: 95px;
-  position: relative;
   justify-content: center;
   align-items: center;
   padding-top: 5px;
@@ -34,16 +41,17 @@ ul {
 }
 .header__img {
   width: 64%;
-  min-width: 180px;
+  min-width: 140px;
   max-width: 270px;
+  position: relative;
+  right: 1%;
 }
 .header__btn {
-  position: absolute;
-  align-content: center;
-  left: 25px;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 9vw, 1.8rem);
   border: none;
-  background: #FFF;
+  background: transparent;
+  position: relative;
+  right: 13%;
 }
 .header__btn a {
   color: #101010;
@@ -94,13 +102,13 @@ ul {
   margin: 24px 32px 40px 32px;
   text-align: center;
 }
-.explore-intro__btn {
+.explore-intro__btn, .restaur-menu__btn {
   display: flex;
   justify-content: center;
 }
-.explore-intro__btn button {
+.explore-intro__btn button, .restaur-menu__btn button {
   justify-content: center;
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   justify-content: center;
   background: #9356DC;
   text-align: center;
@@ -112,7 +120,7 @@ ul {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
   background: linear-gradient(to right bottom, #FF79DA 0%, #9356DC 98%, #9356DC 100%);
 }
-.explore-intro__btn button:hover {
+.explore-intro__btn button:hover, .restaur-menu__btn button:hover {
   background: linear-gradient(to right bottom, #FF79DA 0%, #FF79DA 16%, #9356DC 100%);
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.4);
 }
@@ -127,14 +135,13 @@ ul {
   font-weight: 900;
   margin: 28px 0 40px 20px;
 }
-
-.pres-section .cards {
+.pres-section__cards {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.pres-section .card {
+.pres-section__card {
   display: flex;
   flex-direction: row;
   background: #fbfbfb;
@@ -149,11 +156,11 @@ ul {
   font-size: 1.5rem;
   box-shadow: 0 6px 16px -5px rgba(0, 0, 0, 0.2);
 }
-.pres-section .card__number {
+.pres-section__card .card__number {
   display: flex;
   margin: -5px;
 }
-.pres-section .card__number p {
+.pres-section__card .card__number p {
   background: #9356DC;
   border-radius: 30px;
   height: 26px;
@@ -163,21 +170,21 @@ ul {
   font-size: 17px;
   color: #FFF;
 }
-.pres-section .card__icon {
+.pres-section__card .card__icon {
   display: flex;
   color: #959595;
   margin: 0 10%;
 }
-.pres-section .card__instruct {
+.pres-section__card .card__instruct {
   display: flex;
   font-size: clamp(0.4rem, 8vw, 1.3rem);
   font-weight: 600;
 }
-.pres-section .card:hover {
+.pres-section__card:hover {
   cursor: pointer;
   background: #f2eafb;
 }
-.pres-section .card:hover .card__icon {
+.pres-section__card:hover .card__icon {
   color: #9356DC;
 }
 
@@ -192,14 +199,13 @@ ul {
   font-weight: 900;
   margin: 65px 0 40px 20px;
 }
-
-.restaur-section .cards {
+.restaur-section__cards {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.restaur-section .card {
+.restaur-section__card {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -214,23 +220,23 @@ ul {
   margin-bottom: 32px;
   box-shadow: 0 6px 16px -5px rgba(0, 0, 0, 0.2);
 }
-.restaur-section .card a {
+.restaur-section__card a {
   height: 290px;
 }
-.restaur-section .card__img {
+.restaur-section__card .card__img {
   width: 100%;
   height: 200px;
   padding: 0;
   margin: 0;
 }
-.restaur-section .card__img img {
+.restaur-section__card .card__img img {
   object-fit: cover;
   height: 200px;
   width: 100%;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
 }
-.restaur-section .card__img .new {
+.restaur-section__card .card__img .new {
   position: absolute;
   color: #2ea084;
   font-weight: 600;
@@ -240,37 +246,197 @@ ul {
   background: #99E2D0;
   border-radius: 3px;
 }
-.restaur-section .card__body {
+.restaur-section__card .card__body {
   display: flex;
   height: 90px;
 }
-.restaur-section .card__info {
+.restaur-section__card .card__info {
   color: #101010;
   width: 80%;
   margin: 15px;
 }
-.restaur-section .card__info h3 {
+.restaur-section__card .card__info h3 {
   font-weight: 600;
   font-size: clamp(0.4rem, 8vw, 1.3rem);
   margin: 0 0 5px 0;
 }
-.restaur-section .card__info p {
+.restaur-section__card .card__info p {
   font-size: clamp(0.4rem, 7vw, 1.2rem);
   margin: 0;
 }
-.restaur-section .card__fav {
+.restaur-section__card .card__fav {
   width: 20%;
   align-self: center;
   text-align: center;
 }
-.restaur-section .card__fav button {
+.restaur-section__card .card__fav button {
   border: none;
   background: #FFF;
 }
-.restaur-section .card__fav button i {
+.restaur-section__card .card__fav button .fa-heart {
+  color: #9356DC;
   font-size: clamp(0.5rem, 8vw, 1.5rem);
+  /*background: -webkit-gradient(linear, left top, left bottom, from($color-primary), to($color-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  opacity: 0;
+  z-index: -2;*/
+  /*&::after {
+      border: 1px $color-black solid;
+      opacity: 1;
+      z-index: 1;
+      &:hover::after {
+          opacity: 0;
+      }
+  }*/
+  /*
+  &::before {
+      display: inline-block;
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 0;
+      z-index: -1;
+  }
+  &:hover::before {
+      content: "";
+      animation: fill 1500ms  0ms ;
+  }*/
 }
 
+@keyframes fill {
+  0% {
+    transform: scaleY(0);
+    opacity: 0.1;
+  }
+  35% {
+    transform: scaleY(0.48);
+  }
+  70% {
+    transform: scaleY(0.88);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+/*menu pages*/
+.backgr-img {
+  position: relative;
+  display: flex;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  max-width: auto;
+  z-index: -1;
+}
+.backgr-img__img {
+  width: 100%;
+  height: 333px;
+  min-width: auto;
+  object-fit: cover;
+}
+
+.restaur-menu {
+  position: relative;
+  background: #f6f6f6;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  z-index: 1;
+  bottom: 70px;
+  margin: 0;
+  padding: 0 0 50px 0;
+}
+.restaur-menu__title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 30px 10px 20px 10px;
+}
+.restaur-menu__title h1 {
+  font-family: "Shrikhand", cursive;
+  margin: 0;
+  font-weight: 100;
+  font-size: clamp(1.2rem, 10vw, 2.1rem);
+}
+.restaur-menu__title button {
+  background: transparent;
+  border: none;
+}
+.restaur-menu__title button .fa-heart {
+  font-size: clamp(1rem, 9vw, 1.8rem);
+}
+.restaur-menu .restaur-menu__cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.restaur-menu .restaur-menu__cards h2 {
+  text-transform: uppercase;
+  font-size: 1.35rem;
+  font-weight: 300;
+  margin: 18px 0 5px 5%;
+}
+.restaur-menu .restaur-menu__cards .title-border {
+  width: 53px;
+  height: 2px;
+  margin: 0 0 22px 5%;
+  border-bottom: #99E2D0 solid 4px;
+}
+.restaur-menu .restaur-menu__cards .restaur-menu__card {
+  cursor: pointer;
+  display: flex;
+  width: 90%;
+  height: 85px;
+  min-width: 160px;
+  max-width: 460px;
+  border-radius: 20px;
+  justify-content: space-between;
+  align-items: center;
+  align-self: center;
+  margin: 0 0 32px 0;
+  padding: 0;
+  background: #FFF;
+  box-shadow: 0 6px 16px -5px rgba(0, 0, 0, 0.2);
+}
+.restaur-menu .restaur-menu__cards .restaur-menu__card .card__mealinfo {
+  padding: 5px 15px;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.restaur-menu .restaur-menu__cards .restaur-menu__card .card__mealinfo h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 10px 0 6px 0;
+}
+.restaur-menu .restaur-menu__cards .restaur-menu__card .card__mealinfo p {
+  font-size: 1.05rem;
+  margin: 6px 0 10px 0;
+}
+.restaur-menu .restaur-menu__cards .restaur-menu__card .card__mealprice {
+  align-self: flex-end;
+  margin: 0;
+  padding: 47px 20px 16px 20px;
+}
+.restaur-menu .restaur-menu__cards .restaur-menu__card .card__mealprice p {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.restaur-menu__btn button {
+  margin-top: 35px;
+}
+
+/*footer*/
 footer {
   background-color: #353535;
   height: 200px;

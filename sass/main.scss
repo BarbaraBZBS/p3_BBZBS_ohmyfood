@@ -17,8 +17,8 @@ $purpgradient: $color-secondary 0%, $color-primary 98%, $color-primary 100%;
 $pinkgradient: $color-secondary 0%, $color-secondary 16%, $color-primary 100%;
 
 /*maps*/
-$font-size: (lfont: 2.1rem, medfont: 1.5rem, smfont: 1.3rem, xsmfont: 1.2rem, iconfont: 1.3rem);
-$clamps: (smfont-cl: clamp(0.4rem, 8vw, 1.3rem), xxsmfont-cl: clamp(0.4rem, 6vw, 1rem), xsmfont-cl: clamp(0.4rem, 7vw, 1.2rem), mfont-cl: clamp(0.5rem, 8vw , 1.5rem), lfont-cl: clamp(1.2rem, 10vw, 2.1rem));
+$font-size: (lfont: 2.1rem, medfont: 1.5rem, smfont: 1.35rem, xsmfont: 1.2rem, iconfont: 1.3rem);
+$clamps: (smfont-cl: clamp(0.4rem, 8vw, 1.3rem), xxsmfont-cl: clamp(0.4rem, 6vw, 1rem), xsmfont-cl: clamp(0.4rem, 7vw, 1.2rem), mfont-cl: clamp(0.5rem, 8vw , 1.5rem), mlfont-cl: clamp(1rem, 9vw, 1.8rem), lfont-cl: clamp(1.2rem, 10vw, 2.1rem));
 $padding: (lpad: 40px, medpad: 21px, smpad: 16px, xsmpad: 5px);
 $margin: (medmarg: 32px, lmarg: 40px, smmarg: 20px, xsmmarg: 10px, mlmarg: 50px, xlmarg: 65px);
 $margin-trbl: (ttl1: 22.5px 65px, par1: 24px 32px 40px 32px, ttl2: 28px 0 40px 20px, ttl3: 65px 0 40px 20px, ftrimg: 28px 0 15px 28px);
@@ -40,15 +40,36 @@ $box-shadow: (crd: 0 6px 16px -5px rgba(0, 0, 0, 0.2), buttn: 0 4px 8px 0 rgba(0
 };
 
 /*mixins*/
-@mixin gradient($direction, $list) {
+@mixin lgradient($direction, $list) {
     background: linear-gradient($direction, $list);
 }
+@mixin rgradient($type, $color1, $color2) {
+    background: radial-gradient($type, $color1, $color2);
+}
 
-#main_wrapper {
+#homepage-main_wrapper {
     /*max-width: 1920px;*/
     padding: 0;
     margin: 0;
     font-family: map-get($font-fam, rob), sans-serif;
+}
+#pgpage-main_wrapper {
+    @extend #homepage-main_wrapper;
+    main {
+        max-height: 1816px;
+    }
+}
+#nepage-main_wrapper {
+    @extend #homepage-main_wrapper;
+    main {
+        max-height: 1905px;
+    }
+}
+#alfpage-main_wrapper {
+    @extend #homepage-main_wrapper;
+}
+#lddspage-main_wrapper {
+    @extend #homepage-main_wrapper;
 }
 
 button {
@@ -67,23 +88,23 @@ ul {
 .header {
     display: flex;
     height: 95px;
-    position: relative;
     justify-content: center;
     align-items: center;
     padding-top: map-get($padding, xsmpad);
     box-shadow: map-get($box-shadow, headr);
     &__img {
         width: 64%;
-        min-width: 180px;
+        min-width: 140px;
         max-width: 270px;
+        position: relative;
+        right: 1%;
     }
     &__btn {
-        position: absolute;
-        align-content: center;
-        left: 25px;
-        font-size: map-get($font-size, medfont);
+        font-size: map-get($clamps, mlfont-cl);
         border: none;
-        background: $color-white;
+        background: transparent;
+        position: relative;
+        right: 13%;
         a {
             color: $color-black;
         }        
@@ -150,9 +171,9 @@ ul {
             margin-bottom: 2.5rem;
             padding: map-get($padding, smpad) 25px;
             box-shadow: map-get($box-shadow, buttn);
-            @include gradient(to right bottom, $purpgradient);
+            @include lgradient(to right bottom, $purpgradient);
             &:hover {
-                @include gradient(to right bottom, $pinkgradient);
+                @include lgradient(to right bottom, $pinkgradient);
                 box-shadow: map-get($box-shadow, buttnhovr);
             }
         }
@@ -168,14 +189,13 @@ ul {
         font-weight: 900;
         margin: map-get($margin-trbl, ttl2);
     }
+    &__cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }
-.pres-section .cards {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.pres-section .card {
+.pres-section__card {
     display: flex;
     flex-direction: row;
     background: $color-llgrey;
@@ -189,7 +209,7 @@ ul {
     align-self: center;
     font-size: map-get($font-size, medfont);
     box-shadow: map-get($box-shadow, crd);
-    &__number {
+    .card__number {
         display: flex;
         margin: -5px;
         p {
@@ -203,12 +223,12 @@ ul {
             color: $color-white;
         }
     }
-    &__icon {
+    .card__icon {
         display: flex;
         color: $color-dgrey;
         margin: 0 10%;
     }
-    &__instruct {
+    .card__instruct {
         display: flex;
         font-size: map-get($clamps, smfont-cl);
         font-weight: 600;
@@ -232,15 +252,14 @@ ul {
         font-weight: 900;
         margin: map-get($margin-trbl, ttl3);
     }
+    &__cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }
 
-.restaur-section .cards {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.restaur-section .card {
+.restaur-section__card {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -257,7 +276,7 @@ ul {
     a {
         height: 290px;
     }
-    &__img {
+    .card__img {
         width: 100%;
         height: 200px;
         padding: 0;
@@ -280,11 +299,11 @@ ul {
             border-radius: 3px;
         }
     }
-    &__body {
+    .card__body {
         display: flex;
         height: 90px;
     }
-    &__info {
+    .card__info {
         color: $color-black;
         width: 80%;
         margin: 15px;
@@ -298,21 +317,182 @@ ul {
             margin: 0;
         }
     }
-    &__fav {
+    .card__fav {
         width: 20%;
         align-self: center;
         text-align: center;
         button {
             border: none;
             background: $color-white;
-            i {
+            .fa-heart {
+                color: $color-primary;
                 font-size: map-get($clamps, mfont-cl);
+                /*background: -webkit-gradient(linear, left top, left bottom, from($color-primary), to($color-secondary));
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                position: relative;
+                opacity: 0;
+                z-index: -2;*/
+                /*&::after {
+                    border: 1px $color-black solid;
+                    opacity: 1;
+                    z-index: 1;
+                    &:hover::after {
+                        opacity: 0;
+                    }
+                }*//*
+                &::before {
+                    display: inline-block;
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    opacity: 0;
+                    z-index: -1;
+                }
+                &:hover::before {
+                    content: "";
+                    animation: fill 1500ms  0ms ;
+                }*/
             }
         }
     }
 }
 
+@keyframes fill {
+    0% {
+        transform: scaleY(0);
+        opacity: .1;
+    }
+    35% {
+        transform: scaleY(.48);
+    }
+    70% {
+        transform: scaleY(.88);
+        opacity: 1;
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
 
+/*menu pages*/
+.backgr-img {
+    position: relative;
+    display: flex;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    max-width: auto;
+    z-index: -1;
+    &__img {
+        width: 100%;
+        height: 333px;
+        min-width: auto;
+        object-fit: cover;
+    }
+}
+.restaur-menu {
+    position: relative;
+    background: $color-lgrey;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    z-index: 1;
+    bottom: 70px;
+    margin: 0;
+    padding: 0 0 50px 0;
+    &__title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 30px 10px 20px 10px;
+        h1 {
+            font-family: map-get($font-fam, shr ), cursive;
+            margin: 0;
+            font-weight: 100;
+            font-size: map-get($clamps, lfont-cl);
+        }
+        button {
+            background: transparent;
+            border: none;
+            .fa-heart {
+                font-size: map-get($clamps, mlfont-cl);
+            }
+        }
+    }
+    .restaur-menu__cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        h2 {
+            text-transform: uppercase;
+            font-size: map-get($font-size, smfont);
+            font-weight: 300;
+            margin: 18px 0 5px 5%;
+        }
+        .title-border {
+            width: 53px;
+            height: 2px;
+            margin: 0 0 22px 5%;
+            border-bottom: $color-tertiary solid 4px;
+        }
+        .restaur-menu__card {
+            cursor: pointer;
+            display: flex;
+            width: 90%;
+            height: 85px;
+            min-width: 160px;
+            max-width: 460px;
+            border-radius: 20px;
+            justify-content: space-between;
+            align-items: center;
+            align-self: center;
+            margin: 0 0 32px 0;
+            padding:0;
+            background: $color-white;
+            box-shadow: map-get($box-shadow, crd);
+            .card__mealinfo {
+                padding: 5px 15px;
+                display: inline-block;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                h3 {
+                    font-size: map-get($font-size, smfont);
+                    font-weight: 600;
+                    margin: 10px 0 6px 0;
+                }
+                p {
+                    font-size: 1.05rem;
+                    margin: 6px 0 10px 0;
+                }
+            }
+            .card__mealprice {
+                align-self: flex-end;
+                margin: 0;
+                padding: 47px 20px 16px 20px;
+                p {
+                    margin: 0;
+                    font-weight: 600;
+                    font-size: map-get($font-size, xsmfont);
+                }
+            }
+        }
+    }
+}
+.restaur-menu__btn {
+    @extend .explore-intro__btn;
+    button {
+        margin-top: 35px;
+    }
+}
+
+
+/*footer*/
 footer {
     background-color: $color-lblack;
     height: 200px;
