@@ -3,19 +3,27 @@
 /*maps*/
 /*functions*/
 /*mixins*/
-#homepage-main_wrapper, #lddspage-main_wrapper, #alfpage-main_wrapper, #nepage-main_wrapper, #pgpage-main_wrapper {
+#homepage-main_wrapper, #lddspage-main_wrapper, #alfpage-main_wrapper, #lnepage-main_wrapper, #lpgpage-main_wrapper {
   /*max-width: 1920px;*/
   padding: 0;
   margin: 0;
   font-family: "Roboto", sans-serif;
 }
 
-#pgpage-main_wrapper main {
+#lpgpage-main_wrapper main {
   max-height: 1816px;
 }
 
-#nepage-main_wrapper main {
-  max-height: 1905px;
+#lnepage-main_wrapper main {
+  max-height: 1932px;
+}
+
+#alfpage-main_wrapper main {
+  max-height: 1815px;
+}
+
+#lddspage-main_wrapper main {
+  max-height: 1815px;
 }
 
 button {
@@ -36,6 +44,7 @@ ul {
   height: 95px;
   justify-content: center;
   align-items: center;
+  transform: matrix(1, 0, 0, 1, 0, 0);
   padding-top: 5px;
   box-shadow: 0 0 9px rgba(0, 0, 0, 0.3);
 }
@@ -43,15 +52,13 @@ ul {
   width: 64%;
   min-width: 140px;
   max-width: 270px;
-  position: relative;
-  right: 1%;
 }
 .header__btn {
-  font-size: clamp(1rem, 9vw, 1.8rem);
+  font-size: clamp(0.5rem, 8vw, 1.8rem);
   border: none;
   background: transparent;
-  position: relative;
-  right: 13%;
+  position: fixed;
+  right: 90%;
 }
 .header__btn a {
   color: #101010;
@@ -149,7 +156,7 @@ ul {
   width: 90%;
   height: 85px;
   min-width: auto;
-  max-width: 460px;
+  max-width: 628px;
   border-radius: 30px;
   align-items: center;
   align-self: center;
@@ -363,7 +370,10 @@ ul {
   font-family: "Shrikhand", cursive;
   margin: 0;
   font-weight: 100;
-  font-size: clamp(1.2rem, 10vw, 2.1rem);
+  font-size: 2.1rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .restaur-menu__title button {
   background: transparent;
@@ -395,7 +405,7 @@ ul {
   width: 90%;
   height: 85px;
   min-width: 160px;
-  max-width: 460px;
+  max-width: 628px;
   border-radius: 20px;
   justify-content: space-between;
   align-items: center;
@@ -406,20 +416,28 @@ ul {
   box-shadow: 0 6px 16px -5px rgba(0, 0, 0, 0.2);
 }
 .restaur-menu .restaur-menu__cards .restaur-menu__card .card__mealinfo {
+  display: flex;
+  flex-direction: column;
   padding: 5px 15px;
-  display: inline-block;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .restaur-menu .restaur-menu__cards .restaur-menu__card .card__mealinfo h3 {
   font-size: 1.35rem;
   font-weight: 600;
-  margin: 10px 0 6px 0;
+  margin: 6px 0 3px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: inline;
 }
 .restaur-menu .restaur-menu__cards .restaur-menu__card .card__mealinfo p {
   font-size: 1.05rem;
-  margin: 6px 0 10px 0;
+  margin: 3px 0 6px 0;
+  overflow: hidden;
+  display: inline;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .restaur-menu .restaur-menu__cards .restaur-menu__card .card__mealprice {
   align-self: flex-end;

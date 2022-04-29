@@ -17,8 +17,8 @@ $purpgradient: $color-secondary 0%, $color-primary 98%, $color-primary 100%;
 $pinkgradient: $color-secondary 0%, $color-secondary 16%, $color-primary 100%;
 
 /*maps*/
-$font-size: (lfont: 2.1rem, medfont: 1.5rem, smfont: 1.35rem, xsmfont: 1.2rem, iconfont: 1.3rem);
-$clamps: (smfont-cl: clamp(0.4rem, 8vw, 1.3rem), xxsmfont-cl: clamp(0.4rem, 6vw, 1rem), xsmfont-cl: clamp(0.4rem, 7vw, 1.2rem), mfont-cl: clamp(0.5rem, 8vw , 1.5rem), mlfont-cl: clamp(1rem, 9vw, 1.8rem), lfont-cl: clamp(1.2rem, 10vw, 2.1rem));
+$font-size: (lfont: 2.1rem, medfont: 1.5rem, xxsmfont: 1.05rem, smfont: 1.35rem, xsmfont: 1.2rem, iconfont: 1.3rem);
+$clamps: (smfont-cl: clamp(0.4rem, 8vw, 1.3rem), xxsmfont-cl: clamp(0.4rem, 6vw, 1rem), xsmfont-cl: clamp(0.4rem, 7vw, 1.2rem), mfont-cl: clamp(0.5rem, 8vw , 1.5rem), mifont-cl: clamp(0.5rem, 8vw, 1.8rem), mlfont-cl: clamp(1rem, 9vw, 1.8rem), lfont-cl: clamp(1.2rem, 10vw, 2.1rem));
 $padding: (lpad: 40px, medpad: 21px, smpad: 16px, xsmpad: 5px);
 $margin: (medmarg: 32px, lmarg: 40px, smmarg: 20px, xsmmarg: 10px, mlmarg: 50px, xlmarg: 65px);
 $margin-trbl: (ttl1: 22.5px 65px, par1: 24px 32px 40px 32px, ttl2: 28px 0 40px 20px, ttl3: 65px 0 40px 20px, ftrimg: 28px 0 15px 28px);
@@ -53,23 +53,29 @@ $box-shadow: (crd: 0 6px 16px -5px rgba(0, 0, 0, 0.2), buttn: 0 4px 8px 0 rgba(0
     margin: 0;
     font-family: map-get($font-fam, rob), sans-serif;
 }
-#pgpage-main_wrapper {
+#lpgpage-main_wrapper {
     @extend #homepage-main_wrapper;
     main {
         max-height: 1816px;
     }
 }
-#nepage-main_wrapper {
+#lnepage-main_wrapper {
     @extend #homepage-main_wrapper;
     main {
-        max-height: 1905px;
+        max-height: 1932px;
     }
 }
 #alfpage-main_wrapper {
     @extend #homepage-main_wrapper;
+    main {
+        max-height: 1815px;
+    }
 }
 #lddspage-main_wrapper {
     @extend #homepage-main_wrapper;
+    main {
+        max-height: 1815px;
+    }
 }
 
 button {
@@ -90,21 +96,20 @@ ul {
     height: 95px;
     justify-content: center;
     align-items: center;
+    transform: matrix(1, 0, 0, 1, 0, 0);
     padding-top: map-get($padding, xsmpad);
     box-shadow: map-get($box-shadow, headr);
     &__img {
         width: 64%;
         min-width: 140px;
         max-width: 270px;
-        position: relative;
-        right: 1%;
     }
     &__btn {
-        font-size: map-get($clamps, mlfont-cl);
+        font-size: map-get($clamps, mifont-cl);
         border: none;
         background: transparent;
-        position: relative;
-        right: 13%;
+        position: fixed;
+        right: 90%;
         a {
             color: $color-black;
         }        
@@ -203,7 +208,7 @@ ul {
     width: 90%;
     height: 85px;
     min-width: auto;
-    max-width: 460px;
+    max-width: 628px;
     border-radius: 30px;
     align-items: center;
     align-self: center;
@@ -414,7 +419,10 @@ ul {
             font-family: map-get($font-fam, shr ), cursive;
             margin: 0;
             font-weight: 100;
-            font-size: map-get($clamps, lfont-cl);
+            font-size: map-get($font-size, lfont);
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow:ellipsis;
         }
         button {
             background: transparent;
@@ -446,7 +454,7 @@ ul {
             width: 90%;
             height: 85px;
             min-width: 160px;
-            max-width: 460px;
+            max-width: 628px;
             border-radius: 20px;
             justify-content: space-between;
             align-items: center;
@@ -456,19 +464,27 @@ ul {
             background: $color-white;
             box-shadow: map-get($box-shadow, crd);
             .card__mealinfo {
+                display: flex;
+                flex-direction: column;
                 padding: 5px 15px;
-                display: inline-block;
-                white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
                 h3 {
                     font-size: map-get($font-size, smfont);
                     font-weight: 600;
-                    margin: 10px 0 6px 0;
+                    margin: 6px 0 3px 0;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    display: inline;
                 }
                 p {
                     font-size: 1.05rem;
-                    margin: 6px 0 10px 0;
+                    margin: 3px 0 6px 0;
+                    overflow: hidden;
+                    display: inline;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
                 }
             }
             .card__mealprice {
