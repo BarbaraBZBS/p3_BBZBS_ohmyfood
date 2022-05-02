@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 /*variables*/
 /*lists*/
 /*maps*/
@@ -37,8 +41,7 @@
   flex-direction: column;
   animation: show 0.5s 2s forwards;
 }
-
-.loader {
+.loading .loader {
   height: 120px;
   width: 120px;
   border: 5px solid transparent;
@@ -46,7 +49,7 @@
   border-radius: 50%;
   animation: spin 1.2s ease infinite;
 }
-.loader::before {
+.loading .loader::before {
   content: "";
   position: absolute;
   top: 5px;
@@ -58,7 +61,7 @@
   border-top-color: #99E2D0;
   animation: spin 2.5s linear infinite;
 }
-.loader::after {
+.loading .loader::after {
   content: "";
   position: absolute;
   top: 17px;
@@ -179,11 +182,11 @@ ul {
   margin: 24px 32px 40px 32px;
   text-align: center;
 }
-.explore-intro__btn, .restaur-menu__btn {
+.explore-intro__btn, .restaur-menu .restaur-menu__btn {
   display: flex;
   justify-content: center;
 }
-.explore-intro__btn button, .restaur-menu__btn button {
+.explore-intro__btn button, .restaur-menu .restaur-menu__btn button {
   justify-content: center;
   font-size: 1.35rem;
   justify-content: center;
@@ -197,7 +200,7 @@ ul {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
   background: linear-gradient(to right bottom, #FF79DA 0%, #9356DC 98%, #9356DC 100%);
 }
-.explore-intro__btn button:hover, .restaur-menu__btn button:hover {
+.explore-intro__btn button:hover, .restaur-menu .restaur-menu__btn button:hover {
   background: linear-gradient(to right bottom, #FF79DA 0%, #FF79DA 16%, #9356DC 100%);
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.4);
 }
@@ -409,7 +412,6 @@ ul {
   width: 100%;
   padding: 0;
   margin: 0;
-  max-width: auto;
   z-index: -1;
 }
 .backgr-img__img {
@@ -471,6 +473,7 @@ ul {
 }
 .restaur-menu .restaur-menu__cards .restaur-menu__card {
   cursor: pointer;
+  position: relative;
   display: flex;
   width: 90%;
   height: 85px;
@@ -484,26 +487,154 @@ ul {
   padding: 0;
   background: #FFF;
   box-shadow: 0 6px 16px -5px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
   animation: down 0.5s linear both;
 }
 .restaur-menu .restaur-menu__cards .restaur-menu__card--1 {
   animation-delay: 0.2s;
 }
+.restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealprice {
+  animation: pslide 0.25s 0.25s linear forwards, pslide 0.25s 3.2s linear forwards reverse;
+}
+.restaur-menu .restaur-menu__cards .restaur-menu__card:active .pickmeal {
+  animation: slide 0.4s 0.1s linear forwards, slide 0.4s 3.1s linear forwards reverse;
+}
+.restaur-menu .restaur-menu__cards .restaur-menu__card:active .pickmeal .fa-circle-check {
+  animation: checked 0.6s 0.2s forwards, checked 0.1s 3.2s forwards reverse;
+}
+@media screen and (max-width: 280px) {
+  .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo {
+    animation: xsmshrink 0.5s 0.2s linear forwards, sxmshrink 0.5s 3.3s linear forwards reverse;
+  }
+}
+@media screen and (min-width: 280px) and (max-width: 320px) {
+  .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo {
+    animation: smshrink 0.5s 0.2s linear forwards, smshrink 0.5s 3.3s linear forwards reverse;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 420px) {
+  .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo {
+    animation: mmshrink 0.5s 0.2s linear forwards, mmshrink 0.5s 3.3s linear forwards reverse;
+  }
+}
+@media screen and (min-width: 420px) and (max-width: 507px) {
+  .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo {
+    animation: mshrink 0.4s 0.1s linear forwards, mshrink 0.5s 3.2s linear forwards reverse;
+  }
+}
 .restaur-menu .restaur-menu__cards .restaur-menu__card--2 {
   animation-delay: 0.4s;
+}
+.restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealprice {
+  animation: pslide 0.25s 0.25s linear forwards, pslide 0.25s 3.2s linear forwards reverse;
+}
+.restaur-menu .restaur-menu__cards .restaur-menu__card:active .pickmeal {
+  animation: slide 0.4s 0.1s linear forwards, slide 0.4s 3.1s linear forwards reverse;
+}
+.restaur-menu .restaur-menu__cards .restaur-menu__card:active .pickmeal .fa-circle-check {
+  animation: checked 0.6s 0.2s forwards, checked 0.1s 3.2s forwards reverse;
+}
+@media screen and (max-width: 280px) {
+  .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo {
+    animation: xsmshrink 0.5s 0.2s linear forwards, sxmshrink 0.5s 3.3s linear forwards reverse;
+  }
+}
+@media screen and (min-width: 280px) and (max-width: 320px) {
+  .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo {
+    animation: smshrink 0.5s 0.2s linear forwards, smshrink 0.5s 3.3s linear forwards reverse;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 420px) {
+  .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo {
+    animation: mmshrink 0.5s 0.2s linear forwards, mmshrink 0.5s 3.3s linear forwards reverse;
+  }
+}
+@media screen and (min-width: 420px) and (max-width: 507px) {
+  .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo {
+    animation: mshrink 0.4s 0.1s linear forwards, mshrink 0.5s 3.2s linear forwards reverse;
+  }
 }
 .restaur-menu .restaur-menu__cards .restaur-menu__card--3 {
   animation-delay: 0.6s;
 }
+.restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealprice {
+  animation: pslide 0.25s 0.25s linear forwards, pslide 0.25s 3.2s linear forwards reverse;
+}
+.restaur-menu .restaur-menu__cards .restaur-menu__card:active .pickmeal {
+  animation: slide 0.4s 0.1s linear forwards, slide 0.4s 3.1s linear forwards reverse;
+}
+.restaur-menu .restaur-menu__cards .restaur-menu__card:active .pickmeal .fa-circle-check {
+  animation: checked 0.6s 0.2s forwards, checked 0.1s 3.2s forwards reverse;
+}
+@media screen and (max-width: 280px) {
+  .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo {
+    animation: xsmshrink 0.5s 0.2s linear forwards, sxmshrink 0.5s 3.3s linear forwards reverse;
+  }
+}
+@media screen and (min-width: 280px) and (max-width: 320px) {
+  .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo {
+    animation: smshrink 0.5s 0.2s linear forwards, smshrink 0.5s 3.3s linear forwards reverse;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 420px) {
+  .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo {
+    animation: mmshrink 0.5s 0.2s linear forwards, mmshrink 0.5s 3.3s linear forwards reverse;
+  }
+}
+@media screen and (min-width: 420px) and (max-width: 507px) {
+  .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo {
+    animation: mshrink 0.4s 0.1s linear forwards, mshrink 0.5s 3.2s linear forwards reverse;
+  }
+}
 .restaur-menu .restaur-menu__cards .restaur-menu__card--4 {
   animation-delay: 0.8s;
+}
+.restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealprice {
+  animation: pslide 0.25s 0.25s linear forwards, pslide 0.25s 3.2s linear forwards reverse;
+}
+.restaur-menu .restaur-menu__cards .restaur-menu__card:active .pickmeal {
+  animation: slide 0.4s 0.1s linear forwards, slide 0.4s 3.1s linear forwards reverse;
+}
+.restaur-menu .restaur-menu__cards .restaur-menu__card:active .pickmeal .fa-circle-check {
+  animation: checked 0.6s 0.2s forwards, checked 0.1s 3.2s forwards reverse;
+}
+@media screen and (max-width: 280px) {
+  .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo {
+    animation: xsmshrink 0.5s 0.2s linear forwards, sxmshrink 0.5s 3.3s linear forwards reverse;
+  }
+}
+@media screen and (min-width: 280px) and (max-width: 320px) {
+  .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo {
+    animation: smshrink 0.5s 0.2s linear forwards, smshrink 0.5s 3.3s linear forwards reverse;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 420px) {
+  .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo {
+    animation: mmshrink 0.5s 0.2s linear forwards, mmshrink 0.5s 3.3s linear forwards reverse;
+  }
+}
+@media screen and (min-width: 420px) and (max-width: 507px) {
+  .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo {
+    animation: mshrink 0.4s 0.1s linear forwards, mshrink 0.5s 3.2s linear forwards reverse;
+  }
 }
 .restaur-menu .restaur-menu__cards .restaur-menu__card .card__mealinfo {
   display: flex;
   flex-direction: column;
   padding: 5px 15px;
+  /*max-width: 300px;*/
   overflow: hidden;
   text-overflow: ellipsis;
+}
+@media screen and (min-width: 320px) and (max-width: 420px) {
+  .restaur-menu .restaur-menu__cards .restaur-menu__card .card__mealinfo {
+    max-width: 400px;
+  }
+}
+@media screen and (min-width: 420px) and (max-width: 507px) {
+  .restaur-menu .restaur-menu__cards .restaur-menu__card .card__mealinfo {
+    max-width: 500px;
+  }
 }
 .restaur-menu .restaur-menu__cards .restaur-menu__card .card__mealinfo h3 {
   font-size: 1.35rem;
@@ -523,17 +654,42 @@ ul {
   text-overflow: ellipsis;
 }
 .restaur-menu .restaur-menu__cards .restaur-menu__card .card__mealprice {
-  align-self: flex-end;
+  /*position: relative;*/
   margin: 0;
-  padding: 47px 20px 16px 20px;
+  width: 60px;
+  min-width: 60px;
+  height: 100%;
 }
-.restaur-menu .restaur-menu__cards .restaur-menu__card .card__mealprice p {
-  margin: 0;
+.restaur-menu .restaur-menu__cards .restaur-menu__card .card__mealprice .price {
+  padding-top: 28px;
+  text-align: center;
   font-weight: 600;
   font-size: 1.2rem;
 }
-
-.restaur-menu__btn button {
+.restaur-menu .restaur-menu__cards .restaur-menu__card .pickmeal {
+  opacity: 0;
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
+  justify-content: center;
+  width: 85px;
+  height: 100%;
+  background: #99E2D0;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.restaur-menu .restaur-menu__cards .restaur-menu__card .pickmeal .fa-circle-check {
+  display: flex;
+  align-self: center;
+  height: 40%;
+  width: 40%;
+  color: #FFF;
+  background: #99E2D0;
+  font-size: 2.2rem;
+}
+.restaur-menu .restaur-menu__btn button {
   margin-top: 35px;
 }
 
@@ -550,6 +706,64 @@ ul {
   }
   100% {
     transform: translateY(0%);
+  }
+}
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateX(120%);
+  }
+  100% {
+    opacity: 1;
+    tranform: translateX(50%);
+  }
+}
+@keyframes pslide {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-130%);
+  }
+}
+@keyframes checked {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes xsmshrink {
+  0% {
+    max-width: 300px;
+  }
+  100% {
+    max-width: 50%;
+  }
+}
+@keyframes smshrink {
+  0% {
+    max-width: 300px;
+  }
+  100% {
+    max-width: 55%;
+  }
+}
+@keyframes mmshrink {
+  0% {
+    max-width: 400px;
+  }
+  100% {
+    max-width: 60%;
+  }
+}
+@keyframes mshrink {
+  0% {
+    max-width: 500px;
+  }
+  100% {
+    max-width: 70%;
   }
 }
 /*footer*/

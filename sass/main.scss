@@ -1,3 +1,9 @@
+@use "sass:math";
+
+* {
+    box-sizing: border-box;
+}
+
 /*variables*/
 $color-primary: #9356DC;
 $color-secondary: #FF79DA;
@@ -25,9 +31,9 @@ $margin: (medmarg: 32px, lmarg: 40px, smmarg: 20px, xsmmarg: 10px, mlmarg: 50px,
 $margin-trbl: (ttl1: 22.5px 65px, par1: 24px 32px 40px 32px, ttl2: 28px 0 40px 20px, ttl3: 65px 0 40px 20px, ftrimg: 28px 0 15px 28px);
 $font-fam: (shr: 'Shrikhand', rob: 'Roboto');
 $box-shadow: (crd: 0 6px 16px -5px rgba(0, 0, 0, 0.2), buttn: 0 4px 8px 0 rgba(0, 0, 0, 0.3), headr: 0 0 9px rgba(0, 0, 0, 0.3), buttnhovr: 0 5px 8px 0 rgba(0, 0, 0, 0.4));
+$breakpoints: (xsmobile:  280px, smobile: 320px, mmobile: 420px, meddevice: 507px);
 
 /*functions*/
-@use "sass:math";
 
 @function strip-unit($number) {
     @if type-of($number) == 'number' and not unitless($number) {
@@ -47,6 +53,28 @@ $box-shadow: (crd: 0 6px 16px -5px rgba(0, 0, 0, 0.2), buttn: 0 4px 8px 0 rgba(0
 @mixin rgradient($type, $color1, $color2) {
     background: radial-gradient($type, $color1, $color2);
 }
+
+@mixin xsmobile-only {
+    @media screen and (max-width: map-get($breakpoints, xsmobile)) {
+        @content;
+    }
+}
+@mixin smobile-only {
+    @media screen and (min-width: map-get($breakpoints, xsmobile)) and (max-width: map-get($breakpoints, smobile)) {
+        @content;
+    }
+}
+@mixin mmobile-only {
+    @media screen and (min-width: map-get($breakpoints, smobile)) and (max-width: map-get($breakpoints, mmobile)) {
+        @content;
+    }
+}
+@mixin meddevice-only {
+    @media screen and (min-width: map-get($breakpoints, mmobile)) and (max-width: map-get($breakpoints, meddevice)) {
+        @content;
+    }
+}
+
 
 #homepage-main_wrapper {
     /*max-width: 1920px;*/
@@ -89,68 +117,66 @@ $box-shadow: (crd: 0 6px 16px -5px rgba(0, 0, 0, 0.2), buttn: 0 4px 8px 0 rgba(0
     align-items: center;
     flex-direction: column;
     animation: show 0.5s 2s forwards;
-  }
-
-  .loader {
-    height: 120px;
-    width: 120px;
-    border: 5px solid transparent;
-    border-top-color: $color-primary;
-    border-radius: 50%;
-    animation: spin 1.2s ease infinite;
-    &::before {
-        content: "";
-        position: absolute;
-        top: 5px;
-        right: 7px;
-        bottom: 7px;
-        left: 7px;
+    .loader {
+        height: 120px;
+        width: 120px;
         border: 5px solid transparent;
+        border-top-color: $color-primary;
         border-radius: 50%;
-        border-top-color: $color-tertiary;
-        animation: spin 2.5s linear infinite;    
-    }
-    &::after {
-        content: "";
-        position: absolute;
-        top: 17px;
-        right: 15px;
-        bottom: 15px;
-        left: 15px;
-        border: 5px solid transparent;
-        border-radius: 50%;
-        border-top-color: $color-secondary;
-        animation: spin 1.2s ease infinite;    
-    }
-  }
+        animation: spin 1.2s ease infinite;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 5px;
+            right: 7px;
+            bottom: 7px;
+            left: 7px;
+            border: 5px solid transparent;
+            border-radius: 50%;
+            border-top-color: $color-tertiary;
+            animation: spin 2.5s linear infinite;    
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 17px;
+            right: 15px;
+            bottom: 15px;
+            left: 15px;
+            border: 5px solid transparent;
+            border-radius: 50%;
+            border-top-color: $color-secondary;
+            animation: spin 1.2s ease infinite;    
+        }
+    }    
+}
   
-  .load_wrapper {
+.load_wrapper {
+opacity: 0;
+animation: show 0.6s 2.8s forwards reverse;
+}
+
+@keyframes spin {
+from {
+            transform: rotate(0deg);
+            transform: rotate(0deg);
+}
+to {
+            transform: rotate(359deg);
+            transform: rotate(359deg);
+}
+}
+  
+@keyframes show {
+from {
+    visibility: visible;
+    opacity: 1;
+}
+to {
+    visibility: hidden;
     opacity: 0;
-    animation: show 0.6s 2.8s forwards reverse;
-  }
-
-  @keyframes spin {
-    from {
-              transform: rotate(0deg);
-              transform: rotate(0deg);
-    }
-    to {
-              transform: rotate(359deg);
-              transform: rotate(359deg);
-    }
-  }
-  
-  @keyframes show {
-    from {
-      visibility: visible;
-      opacity: 1;
-    }
-    to {
-      visibility: hidden;
-      opacity: 0;
-    }
-  }
-
+}
+}
 
 button {
     cursor: pointer;
@@ -217,7 +243,6 @@ ul {
     padding-top: map-get($padding, medpad);
     justify-content: center;
     height: auto;
-
     h1 {
         display: flex;
         justify-content: center;
@@ -465,7 +490,6 @@ ul {
     width: 100%;
     padding: 0;
     margin: 0;
-    max-width: auto;
     z-index: -1;
     &__img {
         width: 100%;
@@ -474,6 +498,7 @@ ul {
         object-fit: cover;
     }
 }
+
 .restaur-menu {
     position: relative;
     background: $color-lgrey;
@@ -524,6 +549,7 @@ ul {
         }
         .restaur-menu__card {
             cursor: pointer;
+            position: relative;
             display: flex;
             width: 90%;
             height: 85px;
@@ -537,16 +563,49 @@ ul {
             padding:0;
             background: $color-white;
             box-shadow: map-get($box-shadow, crd);
+            overflow: hidden;
             animation : down 0.5s linear both;
             @for $i from 1 through $card-numbrs {
             &--#{$i} {animation-delay: 0.2s * $i;}
+            &:active {
+                .card__mealprice {
+                    animation: pslide 0.25s 0.25s linear forwards, pslide 0.25s 3.2s linear forwards reverse;
+                }
+                .pickmeal {
+                    animation: slide 0.4s 0.1s linear forwards, slide 0.4s 3.1s linear forwards reverse;
+                    .fa-circle-check {
+                    animation: checked 0.6s 0.2s forwards, checked 0.1s 3.2s forwards reverse;
+                    } 
+                }
+                .card__mealinfo {
+                    @include xsmobile-only {
+                        animation: xsmshrink 0.5s 0.2s linear forwards, sxmshrink 0.5s 3.3s linear forwards reverse;
+                    }
+                    @include smobile-only {
+                        animation: smshrink 0.5s 0.2s linear forwards, smshrink 0.5s 3.3s linear forwards reverse;
+                    }
+                    @include mmobile-only {
+                        animation: mmshrink 0.5s 0.2s linear forwards, mmshrink 0.5s 3.3s linear forwards reverse;
+                    }
+                    @include meddevice-only {
+                        animation: mshrink 0.4s 0.1s linear forwards, mshrink 0.5s 3.2s linear forwards reverse;
+                    }
+                }
             }
+        }
             .card__mealinfo {
                 display: flex;
                 flex-direction: column;
                 padding: 5px 15px;
+                /*max-width: 300px;*/
                 overflow: hidden;
                 text-overflow: ellipsis;
+                @include mmobile-only {
+                    max-width: 400px;
+                }
+                @include meddevice-only {
+                    max-width: 500px;
+                }
                 h3 {
                     font-size: map-get($font-size, smfont);
                     font-weight: 600;
@@ -566,40 +625,132 @@ ul {
                 }
             }
             .card__mealprice {
-                align-self: flex-end;
+                /*position: relative;*/
                 margin: 0;
-                padding: 47px 20px 16px 20px;
-                p {
-                    margin: 0;
+                width: 60px;
+                min-width: 60px;
+                height: 100%;
+                .price {
+                    padding-top: 28px;
+                    text-align: center;
                     font-weight: 600;
                     font-size: map-get($font-size, xsmfont);
                 }
             }
+            .pickmeal {
+                opacity: 0;
+                display: flex;
+                position: absolute;
+                top: 0;
+                right: 0;
+                text-align: center;
+                justify-content: center;
+                width: 85px;
+                height: 100%;
+                background: $color-tertiary;
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+                .fa-circle-check {
+                    display: flex;
+                    align-self: center;
+                    height: 40%;
+                    width: 40%;
+                    color: $color-white;
+                    background: $color-tertiary;
+                    font-size: 2.2rem;
+                }
+            }
         }
     }
-}
-.restaur-menu__btn {
-    @extend .explore-intro__btn;
-    button {
-        margin-top: 35px;
-    }
+    .restaur-menu__btn {
+        @extend .explore-intro__btn;
+        button {
+            margin-top: 35px;
+        }
+    }    
 }
 
 @keyframes down {
     0% {
-      opacity: 0;
-      transform: translateY(30%);
+        opacity: 0;
+        transform: translateY(30%);
     }
     30% {
-      opacity: 0.5;
+        opacity: 0.5;
     }
     40% {
-      opacity: 1;
+        opacity: 1;
     }
     100% {
-      transform: translateY(0%);
+        transform: translateY(0%);
+    }
+}
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translateX(120%);
+    }
+    100% {
+        opacity: 1;
+        tranform: translateX(50%);
+    }
+}
+
+@keyframes pslide {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-130%);
+    }
+}
+
+@keyframes checked {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes xsmshrink {
+    0% {
+      max-width:300px;
+    }
+    100% {
+      max-width:50%;
     }
   }
+
+  @keyframes smshrink {
+    0% {
+      max-width:300px;
+    }
+    100% {
+      max-width:55%;
+    }
+  }
+
+  @keyframes mmshrink {
+    0% {
+      max-width:400px;
+    }
+    100% {
+      max-width:60%;
+    }
+  }
+
+@keyframes mshrink {
+    0% {
+        max-width: 500px;
+    }
+    100% {
+        max-width: 70%;
+    }
+}
+
 
 /*footer*/
 footer {
