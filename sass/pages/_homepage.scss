@@ -1,0 +1,302 @@
+.locate-form {
+    display: flex;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+    background: $color-grey;
+    width: 100%;
+    &__btn {
+        border: none;
+        background: $color-grey;
+        margin-right:  em(8);
+        font-size: map-get($clamps, smfont-cl);
+        @include ldevice {
+            margin-right: em(20);
+        }
+    }
+    &__input {
+        border: none;
+        background: $color-grey;
+        font-weight: 500;
+        font-size: map-get($clamps, xsmfont-cl);
+        text-indent: 0.5rem;
+        line-height: 1.9rem;
+        -webkit-appearance: none;
+        @include ldevice {
+            text-indent: 1rem;
+        }
+    }
+}
+
+.explore-intro {
+    padding-top: map-get($padding, medpad);
+    justify-content: center;
+    height: auto;
+    background: $color-llgrey;
+    h1 {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-size: map-get($font-size, lfont);
+        font-weight: 900;
+        line-height: 2.35rem;
+        margin: map-get($margin-trbl, ttl1);
+    }
+    p {
+        display: flex;
+        justify-content: center;
+        font-size: map-get($font-size, medfont);
+        color: $color-dgrey;
+        margin: map-get($margin-trbl, par1);
+        text-align: center;
+    }
+    &__btn {
+        display: flex;
+        justify-content: center;
+        .button {
+            justify-content: center;
+            font-size: map-get($font-size, smfont);
+            justify-content: center;
+            background: $color-primary;
+            text-align: center;
+            justify-items: center;
+            border: none;
+            border-radius: 30px;
+            margin-bottom: 2.5rem;
+            padding: map-get($padding, smpad) 25px;
+            box-shadow: map-get($box-shadow, buttn);
+            @include lgradient(to right bottom, $purpgradient);
+            &:hover {
+                @include lgradient(to right bottom, $pinkgradient);
+                box-shadow: map-get($box-shadow, buttnhovr);
+            }
+        }
+    }
+}
+
+.pres-section {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: map-get($padding, lpad);
+    h2{
+        font-size: map-get($clamps, lfont-cl);
+        font-weight: 900;
+        margin: map-get($margin-trbl, ttl2);
+        @include ldevice {
+            margin: 50px 0 55px 6%;
+        }
+    }
+    &__cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        @include lbdevice {
+            flex-direction: row;
+        }
+    
+    }
+}
+.pres-section__card {
+    display: flex;
+    flex-direction: row;
+    background: $color-llgrey;
+    margin-bottom: map-get($margin, medmarg);
+    width: 90%;
+    height: 85px;
+    min-width: auto;
+    max-width: 628px;
+    border-radius: 30px;
+    align-items: center;
+    align-self: center;
+    font-size: map-get($font-size, medfont);
+    box-shadow: map-get($box-shadow, crd);
+    @include ldevice {
+        margin: 2%;
+    }
+    .card__number {
+        display: flex;
+        margin: -5px;
+        p {
+            background: $color-primary;
+            border-radius: 30px;
+            height: 26px;
+            width: 26px;
+            text-align: center;
+            margin: -4px;
+            font-size: 17px;
+            color: $color-white;
+        }
+    }
+    .card__icon {
+        display: flex;
+        color: $color-dgrey;
+        margin: 0 10%;
+        @include tabdevice {
+            margin: 0 12%;
+        }
+        @include ldevice {
+            margin: 0 15%;
+        }
+        @include lbdevice {
+            margin: 0 11%;
+        }
+    }
+    .card__instruct {
+        display: flex;
+        font-size: map-get($clamps, smfont-cl);
+        font-weight: 600;
+    }
+    &:nth-child(3) {
+        background: lighten($color: $color-primary, $amount: 35);
+        .card__icon {
+            color: $color-primary;
+        }
+    }
+}
+
+.restaur-section {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: map-get($padding, lpad);
+    background: $color-lgrey;
+    h2 {
+        font-size: map-get($clamps, lfont-cl);
+        font-weight: 900;
+        margin: map-get($margin-trbl, ttl3);
+        @include ldevice {
+            margin: 60px 0 65px 6%;
+        }
+    }
+    &__cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        @include ldevice {
+            flex-flow: wrap row;
+        }
+    }
+}
+
+.restaur-section__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    background: $color-white;
+    border-radius: 30px;
+    width: 90%;
+    min-width: 160px;
+    max-width: 996px;
+    height: 290px;
+    align-self: center;
+    margin-bottom: map-get($margin, medmarg);
+    box-shadow: 0 6px 16px -5px rgba(0, 0, 0, 0.2) ;
+    @include ldevice {
+        width: 44%;
+        max-width: 90%;
+        min-width: 0;
+        margin: 20px;
+    }
+    a {
+        height: 290px;
+    }
+    .card__img {
+        width: 100%;
+        height: 200px;
+        padding: 0;
+        margin: 0;
+        img {
+            object-fit: cover;
+            height: 200px;
+            width: 100%;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+        }
+        .new {
+            position: absolute;
+            color: darken($color: $color-tertiary, $amount: 34);
+            font-weight: 600;
+            padding: 6px map-get($padding, xsmpad) +5px ;
+            right: 20px;
+            top: 5px;
+            background: $color-tertiary;
+            border-radius: 3px;
+        }
+    }
+    .card__body {
+        display: flex;
+        height: 90px;
+    }
+    .card__info {
+        color: $color-black;
+        width: 80%;
+        margin: 15px;
+        h3 {
+            font-weight: 600;
+            font-size: map-get($clamps, smfont-cl);
+            margin: 0 0 5px 0;
+        }
+        p {
+            font-size: map-get($clamps, xsmfont-cl);
+            margin: 0;
+        }
+    }
+    .card__fav {
+        width: 20%;
+        align-self: center;
+        text-align: center;
+    }
+    .card__btn {
+        position: absolute;
+        bottom: 30px;
+        right: 21px;
+        border: none;
+        background: $color-white;
+        @include ldevice {
+            &:hover {
+                .fa-heart {
+                    animation: fill .3s .1s ease-in forwards;
+                  }    
+            }
+        }      
+        .fa-heart {
+            font-size: map-get($clamps, mfont-cl);
+            }
+        &:active {
+            .fa-heart {
+                animation: fill .3s .1s ease-in forwards;
+              }
+        }
+    }
+
+}
+
+
+@keyframes fill {
+    0% {
+      @include colorfill;
+      opacity: 0;
+    }
+    25% {
+      font-weight: bold;
+      @include colorfill;
+      opacity: 0.60;
+      transform: scale(0.25);
+    }
+    40% {
+      font-weight: bold;
+      @include colorfill;
+      opacity: 0.75;
+      transform: scale(0.5);
+    }
+    65% {
+      @include colorfill;
+      opacity: 0.85;
+      transform: scale(0.75);
+    }
+    100% {
+      font-weight: bold;
+      @include colorfill;
+      transform: scale(1.2);
+    }
+  }

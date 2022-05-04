@@ -1,0 +1,320 @@
+
+.backgr-img {
+    position: relative;
+    display: flex;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    z-index: -1;
+    &__img {
+        width: 100%;
+        height: 333px;
+        min-width: auto;
+        object-fit: cover;
+    }
+}
+
+.restaur-menu {
+    position: relative;
+    background: $color-lgrey;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    z-index: 1;
+    bottom: 70px;
+    margin: 0;
+    padding: 0 0 50px 0;
+    @include ldevice {
+        border-top-left-radius: 70px;
+        border-top-right-radius: 70px;    
+    }
+    &__title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 30px 10px 20px 10px;
+        h1 {
+            font-family: map-get($font-fam, shr), cursive;
+            margin: 0;
+            font-weight: 100;
+            font-size: map-get($font-size, lfont);
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow:ellipsis;
+            @include ldevice {
+                font-size: 2.4rem;
+            }
+        }
+        .title__btn {
+            background: transparent;
+            border: none;
+            @include ldevice {
+                &:hover {
+                    .fa-heart {
+                        animation: fill .3s .1s ease-in forwards;
+                      }
+                }    
+            }
+            &:active {
+                .fa-heart {
+                    animation: fill .3s .1s ease-in forwards;
+                  }
+                }
+            .fa-heart {
+                font-size: map-get($clamps, mlfont-cl);
+            }
+        }
+    }
+    .restaur-menu__cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        h2 {
+            text-transform: uppercase;
+            font-size: map-get($font-size, smfont);
+            font-weight: 300;
+            margin: 18px 0 5px 5%;
+            @include ldevice {
+                margin-left: 27%;
+            }
+        }
+        .title-border {
+            width: 53px;
+            height: 2px;
+            margin: 0 0 22px 5%;
+            border-bottom: $color-tertiary solid 4px;
+            @include ldevice {
+                margin-left: 27%;
+                margin-bottom: 40px;
+            }
+        }
+        .restaur-menu__card {
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            width: 90%;
+            height: 85px;
+            min-width: 160px;
+            max-width: 628px;
+            border-radius: 20px;
+            justify-content: space-between;
+            align-items: center;
+            align-self: center;
+            margin: 0 0 32px 0;
+            padding:0;
+            background: $color-white;
+            box-shadow: map-get($box-shadow, crd);
+            overflow: hidden;
+            animation : down 0.5s linear both;
+            @for $i from 1 through $card-numbrs {
+            &--#{$i} {animation-delay: 0.2s * $i;}
+            @include ldevice {
+                &:hover {
+                    .card__mealprice {
+                        animation: pslide 0.2s 0.2s linear forwards, pslide 0.4s 3.1s linear forwards reverse;
+                    }
+                    .pickmeal {
+                        animation: slide 0.3s 0.1s linear forwards, slide 0.4s 3.1s linear forwards reverse;
+                        .fa-circle-check {
+                        animation: checked 0.6s 0.2s forwards, checked 0.3s 3.2s forwards reverse;
+                        } 
+                    }
+                    .card__mealinfo {
+                        @include xsmobile-only {
+                            animation: xsmshrink 0.4s 0.1s linear forwards, sxmshrink 0.5s 3.3s linear forwards reverse;
+                        }
+                        @include smobile-only {
+                            animation: smshrink 0.4s 0.1s linear forwards, smshrink 0.5s 3.3s linear forwards reverse;
+                        }
+                        @include mmobile-only {
+                            animation: mmshrink 0.4s 0.1s linear forwards, mmshrink 0.5s 3.3s linear forwards reverse;
+                        }
+                        @include meddevice-only {
+                            animation: mshrink 0.4s 0.1s linear forwards, mshrink 0.5s 3.3s linear forwards reverse;
+                        }
+                    }
+                }
+            }
+            &:active {
+                .card__mealprice {
+                    animation: pslide 0.2s 0.2s linear forwards, pslide 0.4s 3.1s linear forwards reverse;
+                }
+                .pickmeal {
+                    animation: slide 0.3s 0.1s linear forwards, slide 0.4s 3.1s linear forwards reverse;
+                    .fa-circle-check {
+                    animation: checked 0.6s 0.2s forwards, checked 0.3s 3.2s forwards reverse;
+                    } 
+                }
+                .card__mealinfo {
+                    @include xsmobile-only {
+                        animation: xsmshrink 0.4s 0.1s linear forwards, sxmshrink 0.5s 3.3s linear forwards reverse;
+                    }
+                    @include smobile-only {
+                        animation: smshrink 0.4s 0.1s linear forwards, smshrink 0.5s 3.3s linear forwards reverse;
+                    }
+                    @include mmobile-only {
+                        animation: mmshrink 0.4s 0.1s linear forwards, mmshrink 0.5s 3.3s linear forwards reverse;
+                    }
+                    @include meddevice-only {
+                        animation: mshrink 0.4s 0.1s linear forwards, mshrink 0.5s 3.3s linear forwards reverse;
+                    }
+                }
+            }
+        }
+            .card__mealinfo {
+                display: flex;
+                flex-direction: column;
+                padding: 5px 15px;
+                /*max-width: 300px;*/
+                overflow: hidden;
+                text-overflow: ellipsis;
+                @include mmobile-only {
+                    max-width: 400px;
+                }
+                @include meddevice-only {
+                    max-width: 500px;
+                }
+                h3 {
+                    font-size: map-get($font-size, smfont);
+                    font-weight: 600;
+                    margin: 6px 0 3px 0;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    display: inline;
+                }
+                p {
+                    font-size: 1.05rem;
+                    margin: 3px 0 6px 0;
+                    overflow: hidden;
+                    display: inline;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+            }
+            .card__mealprice {
+                /*position: relative;*/
+                margin: 0;
+                width: 60px;
+                min-width: 60px;
+                height: 100%;
+                .price {
+                    padding-top: 28px;
+                    text-align: center;
+                    font-weight: 600;
+                    font-size: map-get($font-size, xsmfont);
+                }
+            }
+            .pickmeal {
+                opacity: 0;
+                display: flex;
+                position: absolute;
+                top: 0;
+                right: 0;
+                text-align: center;
+                justify-content: center;
+                width: 85px;
+                height: 100%;
+                background: $color-tertiary;
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+                .fa-circle-check {
+                    display: flex;
+                    align-self: center;
+                    height: 40%;
+                    width: 40%;
+                    color: $color-white;
+                    background: $color-tertiary;
+                    font-size: 2.2rem;
+                }
+            }
+        }
+    }
+    .restaur-menu__btn {
+        @extend .explore-intro__btn;
+        .button {
+            margin-top: 35px;
+        }
+    }    
+}
+
+@keyframes down {
+    0% {
+        opacity: 0;
+        transform: translateY(30%);
+    }
+    30% {
+        opacity: 0.5;
+    }
+    40% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes slide {
+    0% {
+        opacity: 0.3;
+        transform: translateX(120%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes pslide {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-130%);
+    }
+}
+
+@keyframes checked {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes xsmshrink {
+    0% {
+      max-width:300px;
+    }
+    100% {
+      max-width:50%;
+    }
+  }
+
+  @keyframes smshrink {
+    0% {
+      max-width:300px;
+    }
+    100% {
+      max-width:55%;
+    }
+  }
+
+  @keyframes mmshrink {
+    0% {
+      max-width:400px;
+    }
+    100% {
+      max-width:60%;
+    }
+  }
+
+@keyframes mshrink {
+    0% {
+        max-width: 500px;
+    }
+    100% {
+        max-width: 70%;
+    }
+}

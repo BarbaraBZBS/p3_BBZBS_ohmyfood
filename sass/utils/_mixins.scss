@@ -1,0 +1,67 @@
+@mixin lgradient($direction, $list) {
+    background: linear-gradient($direction, $list);
+}
+
+@mixin wkgradient() {
+    background: -webkit-gradient(linear, left top, left bottom, from($color-primary), to($color-secondary));
+  }
+
+  @mixin colorfill {
+    color: $color-primary;
+    @include wkgradient;
+    -webkit-background-clip: text;
+     background-clip: text;
+    -webkit-text-fill-color: transparent;
+     position: relative;
+  }
+
+@mixin xsmobile-only {
+    @media screen and (max-width: map-get($breakpoints, xsmobile)) {
+        @content;
+    }
+}
+@mixin smobile-only {
+    @media screen and (min-width: map-get($breakpoints, xsmobile)) and (max-width: map-get($breakpoints, smobile)) {
+        @content;
+    }
+}
+@mixin mmobile-only {
+    @media screen and (min-width: map-get($breakpoints, smobile)) and (max-width: map-get($breakpoints, mmobile)) {
+        @content;
+    }
+}
+@mixin meddevice-only {
+    @media screen and (min-width: map-get($breakpoints, mmobile)) and (max-width: map-get($breakpoints, meddevice)) {
+        @content;
+    }
+}
+@mixin laptop-only {
+    @media screen and (min-width: map-get($breakpoints, tablet)) and (max-width: map-get($breakpoints, laptop)) {
+        @content;
+    }
+}
+@mixin computer-only {
+    @media screen and (min-width: map-get($breakpoints, laptop)) and (max-width: map-get($breakpoints, desktop)) {
+        @content;
+    }
+}
+@mixin tv-only {
+    @media screen and (min-width: map-get($breakpoints, tv)) {
+        @content;
+    }
+}
+@mixin tabdevice {
+    @media screen  and (min-width: map-get($breakpoints, meddevice)) and (max-width: map-get($breakpoints, tablet)) {
+        @content;
+    }
+}
+@mixin ldevice {
+    @media screen and (min-width: map-get($breakpoints, tablet)) {
+        @content;
+    }
+}
+@mixin lbdevice {
+    @media screen and (min-width: map-get($breakpoints, laptop)) {
+        @content;
+    }
+}

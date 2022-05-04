@@ -1,0 +1,8 @@
+$font-size: (lfont: 2.1rem, medfont: 1.5rem, xxsmfont: 1.05rem, smfont: 1.35rem, xsmfont: 1.2rem, iconfont: 1.3rem);
+$clamps: (smfont-cl: clamp(0.4rem, 8vw, 1.3rem), xxsmfont-cl: clamp(0.4rem, 6vw, 1rem), xsmfont-cl: clamp(0.4rem, 7vw, 1.2rem), mfont-cl: clamp(0.5rem, 8vw , 1.5rem), mifont-cl: clamp(0.5rem, 8vw, 1.8rem), mlfont-cl: clamp(1rem, 9vw, 1.8rem), lfont-cl: clamp(1.2rem, 10vw, 2.1rem));
+$padding: (lpad: 40px, medpad: 21px, smpad: 16px, xsmpad: 5px);
+$margin: (medmarg: 32px, lmarg: 40px, smmarg: 20px, xsmmarg: 10px, mlmarg: 50px, xlmarg: 65px);
+$margin-trbl: (ttl1: 22.5px 65px, par1: 24px 32px 40px 32px, ttl2: 28px 0 40px 20px, ttl3: 50px 0 40px 20px, ftrimg: 28px 0 15px 28px);
+$font-fam: (shr: 'Shrikhand', rob: 'Roboto');
+$box-shadow: (crd: 0 6px 16px -5px rgba(0, 0, 0, 0.2), buttn: 0 4px 8px 0 rgba(0, 0, 0, 0.3), headr: 0 0 9px rgba(0, 0, 0, 0.3), buttnhovr: 0 5px 8px 0 rgba(0, 0, 0, 0.4));
+$breakpoints: (xsmobile:  280px, smobile: 320px, mmobile: 420px, meddevice: 507px, tablet: 769px, laptop: 1024px, desktop: 1200px, tv: 1201px);

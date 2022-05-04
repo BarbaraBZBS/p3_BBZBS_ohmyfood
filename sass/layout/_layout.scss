@@ -1,0 +1,105 @@
+#homepage-main_wrapper {
+    padding: 0;
+    margin: 0;
+    font-family: map-get($font-fam, rob), sans-serif;
+    @include tv-only {
+        max-width: 1920px;
+    }
+}
+#lpgpage-main_wrapper {
+    @extend #homepage-main_wrapper;
+    main {
+        max-height: 1810px;
+        @include ldevice{
+            max-height: 1869px
+        }    
+    }
+}
+#lnepage-main_wrapper {
+    @extend #homepage-main_wrapper;
+    main {
+        max-height: 1926px;
+        @include ldevice{
+            max-height: 1985px
+        }    
+    }
+}
+#alfpage-main_wrapper {
+    @extend #homepage-main_wrapper;
+    main {
+        max-height: 1809px;
+        @include ldevice{
+            max-height: 1868px
+        }    
+    }
+}
+#lddspage-main_wrapper {
+    @extend #homepage-main_wrapper;
+    main {
+        max-height: 1809px;
+        @include ldevice{
+            max-height: 1868px
+        }    
+    }
+}
+
+
+.header {
+    display: flex;
+    height: 95px;
+    justify-content: center;
+    align-items: center;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    padding-top: map-get($padding, xsmpad);
+    box-shadow: map-get($box-shadow, headr);
+    &__img {
+        width: 64%;
+        min-width: 140px;
+        max-width: 270px;
+    }
+    &__btn {
+        font-size: map-get($clamps, mifont-cl);
+        border: none;
+        background: transparent;
+        position: fixed;
+        right: 85%;
+        @include ldevice {
+            right: 95%;
+        }
+        a {
+            color: $color-black;
+        }        
+    }
+}
+
+
+footer {
+    background-color: $color-lblack;
+    height: 200px;
+    width: 100%;  
+    img {
+        filter: invert(1);
+        width: 28%;
+        margin: map-get($margin-trbl, ftrimg);
+        min-width: 138px;
+        max-width: 160px;     
+    }
+    ul {
+        margin: 0;
+        li {
+            margin-bottom: 7px;
+            font-size: map-get($clamps, xxsmfont-cl);
+        }
+    }
+    a {
+        color: $color-white;
+    }
+    .fa-utensils {
+        margin-right: 18px;
+        font-size: 0.9rem;
+    }
+    .fa-handshake-angle {
+        margin-right: 14px;
+        font-size: 0.8rem;
+    }
+}
