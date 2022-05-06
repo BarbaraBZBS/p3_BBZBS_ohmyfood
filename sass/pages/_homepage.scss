@@ -97,6 +97,7 @@
     }
 }
 .pres-section__card {
+    cursor: pointer;
     display: flex;
     flex-direction: row;
     background: $color-llgrey;
@@ -112,6 +113,12 @@
     box-shadow: map-get($box-shadow, crd);
     @include ldevice {
         margin: 2%;
+    }
+    &:hover {
+        background: lighten($color: $color-primary, $amount: 35);
+        .card__icon {
+            color: $color-primary;
+        }
     }
     .card__number {
         display: flex;
@@ -145,12 +152,6 @@
         display: flex;
         font-size: map-get($clamps, smfont-cl);
         font-weight: 600;
-    }
-    &:nth-child(3) {
-        background: lighten($color: $color-primary, $amount: 35);
-        .card__icon {
-            color: $color-primary;
-        }
     }
 }
 

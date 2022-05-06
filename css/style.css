@@ -305,6 +305,7 @@ footer .fa-handshake-angle {
 }
 
 .pres-section__card {
+  cursor: pointer;
   display: flex;
   flex-direction: row;
   background: #fbfbfb;
@@ -323,6 +324,12 @@ footer .fa-handshake-angle {
   .pres-section__card {
     margin: 2%;
   }
+}
+.pres-section__card:hover {
+  background: #f2eafb;
+}
+.pres-section__card:hover .card__icon {
+  color: #9356DC;
 }
 .pres-section__card .card__number {
   display: flex;
@@ -362,12 +369,6 @@ footer .fa-handshake-angle {
   display: flex;
   font-size: clamp(0.4rem, 8vw, 1.3rem);
   font-weight: 600;
-}
-.pres-section__card:nth-child(3) {
-  background: #f2eafb;
-}
-.pres-section__card:nth-child(3) .card__icon {
-  color: #9356DC;
 }
 
 .restaur-section {
@@ -912,7 +913,6 @@ footer .fa-handshake-angle {
   display: flex;
   flex-direction: column;
   padding: 5px 15px;
-  /*max-width: 300px;*/
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -944,7 +944,6 @@ footer .fa-handshake-angle {
   text-overflow: ellipsis;
 }
 .restaur-menu .restaur-menu__cards .restaur-menu__card .card__mealprice {
-  /*position: relative;*/
   margin: 0;
   width: 60px;
   min-width: 60px;
