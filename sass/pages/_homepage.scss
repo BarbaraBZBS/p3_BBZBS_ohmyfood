@@ -10,6 +10,7 @@
         background: $color-grey;
         margin-right:  em(8);
         font-size: map-get($clamps, smfont-cl);
+        color: $color-black;
         @include ldevice {
             margin-right: em(20);
         }
@@ -263,6 +264,7 @@
         }      
         .fa-heart {
             font-size: map-get($clamps, mfont-cl);
+            color: $color-black;
             }
         &:active {
             .fa-heart {

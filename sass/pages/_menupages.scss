@@ -62,6 +62,7 @@
                 }
             .fa-heart {
                 font-size: map-get($clamps, mlfont-cl);
+                color: $color-black;
             }
         }
     }

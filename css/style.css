@@ -216,6 +216,7 @@ footer .fa-handshake-angle {
   background: #EAEAEA;
   margin-right: 0.5714285714em;
   font-size: clamp(0.4rem, 8vw, 1.3rem);
+  color: #101010;
 }
 @media screen and (min-width: 769px) {
   .locate-form__btn {
@@ -490,6 +491,7 @@ footer .fa-handshake-angle {
 }
 .restaur-section__card .card__btn .fa-heart {
   font-size: clamp(0.5rem, 8vw, 1.5rem);
+  color: #101010;
 }
 .restaur-section__card .card__btn:active .fa-heart {
   -webkit-animation: fill 0.3s 0.1s ease-in forwards;
@@ -620,6 +622,7 @@ footer .fa-handshake-angle {
 }
 .restaur-menu__title .title__btn .fa-heart {
   font-size: clamp(1rem, 9vw, 1.8rem);
+  color: #101010;
 }
 .restaur-menu .restaur-menu__cards {
   display: flex;
