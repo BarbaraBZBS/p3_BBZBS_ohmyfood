@@ -256,6 +256,7 @@
         @include ldevice {
             &:hover {
                 .fa-heart {
+                    -webkit-animation: fill .3s .1s ease-in forwards;
                     animation: fill .3s .1s ease-in forwards;
                   }    
             }
@@ -265,6 +266,7 @@
             }
         &:active {
             .fa-heart {
+                -webkit-animation: fill .3s .1s ease-in forwards;
                 animation: fill .3s .1s ease-in forwards;
               }
         }
@@ -282,22 +284,26 @@
       font-weight: bold;
       @include colorfill;
       opacity: 0.60;
+      -webkit-transform: scale(0.25);
       transform: scale(0.25);
     }
     40% {
       font-weight: bold;
       @include colorfill;
       opacity: 0.75;
+      -webkit-transform: scale(0.5);
       transform: scale(0.5);
     }
     65% {
       @include colorfill;
       opacity: 0.85;
+      -webkit-transform: scale(0.75);
       transform: scale(0.75);
     }
     100% {
       font-weight: bold;
       @include colorfill;
+      -webkit-transform: scale(1.2);
       transform: scale(1.2);
     }
   }
