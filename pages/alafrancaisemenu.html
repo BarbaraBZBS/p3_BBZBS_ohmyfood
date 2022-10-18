@@ -1,183 +1,208 @@
 <!DOCTYPE html>
 
 <html lang="fr">
-    
-    <head>
-        <!--data-->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Composez votre menu et réservez votre table !</title>
 
-        <!--normalize.css-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<head>
+    <!--data-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Composez votre menu et réservez votre table !</title>
 
-        <!--font-->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap" rel="stylesheet">        
-        <!--fontawesome-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
-        
-        <!--CSS (after normalize or use !important)-->
-        <link href="../css/style.css" type="text/css" rel="stylesheet"/>
-    </head>
+    <!--normalize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <body>
-        <div id="alfpage-main_wrapper" class="main_wrapper">
+    <!--font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap"
+        rel="stylesheet">
+    <!--fontawesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-            <header>
-                <div class="header">
-                    <div class="header__btn"><a href="../index.html"><i class="fa-solid fa-arrow-left"></i></a></div>
-                    <img class="header__img" src="../assets/logo/ohmyfood.png" alt="logo">   
+    <!--CSS (after normalize or use !important)-->
+    <link href="../css/style.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="alfpage-main_wrapper" class="main_wrapper">
+
+        <header>
+            <div class="header">
+                <div class="header__btn"><a href="../index.html"><i class="fa-solid fa-arrow-left"></i></a></div>
+                <img class="header__img" src="../assets/logo/ohmyfood.png" alt="logo">
+            </div>
+        </header>
+        <main>
+            <figure class="backgr-img">
+                <img class="backgr-img__img" src="../assets/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg"
+                    alt="Restaurant À la française">
+            </figure>
+            <section class="restaur-menu">
+                <div class="restaur-menu__title">
+                    <h1>À la française</h1>
+                    <button class="title__btn" ontouchstart><i class="fa-regular fa-heart fill"></i></button>
                 </div>
-            </header>
-            <main>
-                    <figure class="backgr-img">
-                    <img class="backgr-img__img" src="../assets/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="Restaurant À la française">
-                </figure>
-                <section class="restaur-menu">
-                    <div class="restaur-menu__title">
-                        <h1>À la française</h1>
-                        <button class="title__btn"><i class="fa-regular fa-heart fill"></i></button>    
-                    </div>
-                    <div class="restaur-menu__cards">
-                        <h2>Entrées</h2>
-                        <div class="title-border"></div>
-                        <div class="restaur-menu__card restaur-menu__card--1">
-                            <div class="card__mealinfo">
-                                <h3>Tartare de poulpe acidulé</h3>
-                                <p>Aux zestes d'orange</p>    
-                            </div>
-                            <div class="card__mealprice">
-                                <div class="price"> <p>25€</p> </div>
-                            </div>
-                            <div class="pickmeal"> 
-                                <i class="fa-solid fa-circle-check"></i>               
-                            </div>                            
+                <div class="restaur-menu__cards">
+                    <h2>Entrées</h2>
+                    <div class="title-border"></div>
+                    <div class="restaur-menu__card restaur-menu__card--1" ontouchstart>
+                        <div class="card__mealinfo">
+                            <h3>Tartare de poulpe acidulé</h3>
+                            <p>Aux zestes d'orange</p>
                         </div>
-                        <div class="restaur-menu__card restaur-menu__card--2">
-                            <div class="card__mealinfo">
-                                <h3>Velouté de légumes d'antan</h3>
-                                <p>Carotte, panais, topinambour</p>    
+                        <div class="card__mealprice">
+                            <div class="price">
+                                <p>25€</p>
                             </div>
-                            <div class="card__mealprice">
-                                <div class="price"> <p>35€</p> </div>
-                            </div>
-                            <div class="pickmeal"> 
-                                <i class="fa-solid fa-circle-check"></i>               
-                            </div>                            
                         </div>
-                        <div class="restaur-menu__card restaur-menu__card--3">
-                            <div class="card__mealinfo">
-                                <h3>Soupe à l'oignon</h3>
-                                <p>Revisitée</p>    
-                            </div>
-                            <div class="card__mealprice">
-                                <div class="price"> <p>20€</p> </div>
-                            </div>
-                            <div class="pickmeal"> 
-                                <i class="fa-solid fa-circle-check"></i>               
-                            </div>                            
+                        <div class="pickmeal">
+                            <i class="fa-solid fa-circle-check"></i>
                         </div>
                     </div>
-                    <div class="restaur-menu__cards">
-                        <h2>Plats</h2>
-                        <div class="title-border"></div>
-                        <div class="restaur-menu__card restaur-menu__card--1">
-                            <div class="card__mealinfo">
-                                <h3>Coquilles Saint-Jacques</h3>
-                                <p>Accompagnées d'une purée de panais</p>    
-                            </div>
-                            <div class="card__mealprice">
-                                <div class="price"> <p>40€</p> </div>
-                            </div>
-                            <div class="pickmeal"> 
-                                <i class="fa-solid fa-circle-check"></i>               
-                            </div>                            
+                    <div class="restaur-menu__card restaur-menu__card--2" ontouchstart>
+                        <div class="card__mealinfo">
+                            <h3>Velouté de légumes d'antan</h3>
+                            <p>Carotte, panais, topinambour</p>
                         </div>
-                        <div class="restaur-menu__card restaur-menu__card--2">
-                            <div class="card__mealinfo">
-                                <h3>Magret de canard</h3>
-                                <p>Et parmentier de pommes de terre</p>    
+                        <div class="card__mealprice">
+                            <div class="price">
+                                <p>35€</p>
                             </div>
-                            <div class="card__mealprice">
-                                <div class="price"> <p>35€</p> </div>
-                            </div>
-                            <div class="pickmeal"> 
-                                <i class="fa-solid fa-circle-check"></i>               
-                            </div>                            
                         </div>
-                        <div class="restaur-menu__card restaur-menu__card--3">
-                            <div class="card__mealinfo">
-                                <h3>Pigeonneau d’Ille-et-Vilaine</h3>
-                                <p>Sur son lit de gnocchis aux légumes</p>    
-                            </div>
-                            <div class="card__mealprice">
-                                <div class="price"> <p>44€</p> </div>
-                            </div>
-                            <div class="pickmeal"> 
-                                <i class="fa-solid fa-circle-check"></i>               
-                            </div>                            
+                        <div class="pickmeal">
+                            <i class="fa-solid fa-circle-check"></i>
                         </div>
                     </div>
-                    <div class="restaur-menu__cards">
-                        <h2>Desserts</h2>
-                        <div class="title-border"></div>
-                        <div class="restaur-menu__card restaur-menu__card--1">
-                            <div class="card__mealinfo">
-                                <h3>Pétales de violettes glacés</h3>
-                                <p>Et purée de noisettes</p>    
-                            </div>
-                            <div class="card__mealprice">
-                                <div class="price"> <p>18€</p> </div>
-                            </div>
-                            <div class="pickmeal"> 
-                                <i class="fa-solid fa-circle-check"></i>               
-                            </div>                            
+                    <div class="restaur-menu__card restaur-menu__card--3" ontouchstart>
+                        <div class="card__mealinfo">
+                            <h3>Soupe à l'oignon</h3>
+                            <p>Revisitée</p>
                         </div>
-                        <div class="restaur-menu__card restaur-menu__card--2">
-                            <div class="card__mealinfo">
-                                <h3>Fondant au chocolat</h3>
-                                <p>Revisité</p>    
+                        <div class="card__mealprice">
+                            <div class="price">
+                                <p>20€</p>
                             </div>
-                            <div class="card__mealprice">
-                                <div class="price"> <p>22€</p> </div>
-                            </div>
-                            <div class="pickmeal"> 
-                                <i class="fa-solid fa-circle-check"></i>               
-                            </div>                            
                         </div>
-                        <div class="restaur-menu__card restaur-menu__card--3">
-                            <div class="card__mealinfo">
-                                <h3>Millefeuille croustillant</h3>
-                                <p>Myrtilles et pâte d’amande</p>    
-                            </div>
-                            <div class="card__mealprice">
-                                <div class="price"> <p>23€</p> </div>
-                            </div>
-                            <div class="pickmeal"> 
-                                <i class="fa-solid fa-circle-check"></i>               
-                            </div>                            
+                        <div class="pickmeal">
+                            <i class="fa-solid fa-circle-check"></i>
                         </div>
                     </div>
-                    <div class="restaur-menu__btn">
-                        <div class="button"><a href="#order">Commander</a></div>
+                </div>
+                <div class="restaur-menu__cards">
+                    <h2>Plats</h2>
+                    <div class="title-border"></div>
+                    <div class="restaur-menu__card restaur-menu__card--1" ontouchstart>
+                        <div class="card__mealinfo">
+                            <h3>Coquilles Saint-Jacques</h3>
+                            <p>Accompagnées d'une purée de panais</p>
+                        </div>
+                        <div class="card__mealprice">
+                            <div class="price">
+                                <p>40€</p>
+                            </div>
+                        </div>
+                        <div class="pickmeal">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
                     </div>
-                </section>
-            </main>
-            <footer>
-                <img src="../assets/logo/ohmyfood@2x.svg" alt="footer logo">
-                <ul>
-                    <li><a href="#"><i class="fa-solid fa-utensils"></i>Proposer un restaurant</a></li>
-                    <li><a href="#"><i class="fa-solid fa-handshake-angle"></i>Devenir partenaire</a></li>
-                    <li><a href="#">Mentions légales</a></li>
-                    <li><a href="mailto:#">Contact</a></li>
-                </ul>
-            </footer>
-     
+                    <div class="restaur-menu__card restaur-menu__card--2" ontouchstart>
+                        <div class="card__mealinfo">
+                            <h3>Magret de canard</h3>
+                            <p>Et parmentier de pommes de terre</p>
+                        </div>
+                        <div class="card__mealprice">
+                            <div class="price">
+                                <p>35€</p>
+                            </div>
+                        </div>
+                        <div class="pickmeal">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                    </div>
+                    <div class="restaur-menu__card restaur-menu__card--3" ontouchstart>
+                        <div class="card__mealinfo">
+                            <h3>Pigeonneau d’Ille-et-Vilaine</h3>
+                            <p>Sur son lit de gnocchis aux légumes</p>
+                        </div>
+                        <div class="card__mealprice">
+                            <div class="price">
+                                <p>44€</p>
+                            </div>
+                        </div>
+                        <div class="pickmeal">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaur-menu__cards">
+                    <h2>Desserts</h2>
+                    <div class="title-border"></div>
+                    <div class="restaur-menu__card restaur-menu__card--1" ontouchstart>
+                        <div class="card__mealinfo">
+                            <h3>Pétales de violettes glacés</h3>
+                            <p>Et purée de noisettes</p>
+                        </div>
+                        <div class="card__mealprice">
+                            <div class="price">
+                                <p>18€</p>
+                            </div>
+                        </div>
+                        <div class="pickmeal">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                    </div>
+                    <div class="restaur-menu__card restaur-menu__card--2" ontouchstart>
+                        <div class="card__mealinfo">
+                            <h3>Fondant au chocolat</h3>
+                            <p>Revisité</p>
+                        </div>
+                        <div class="card__mealprice">
+                            <div class="price">
+                                <p>22€</p>
+                            </div>
+                        </div>
+                        <div class="pickmeal">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                    </div>
+                    <div class="restaur-menu__card restaur-menu__card--3" ontouchstart>
+                        <div class="card__mealinfo">
+                            <h3>Millefeuille croustillant</h3>
+                            <p>Myrtilles et pâte d’amande</p>
+                        </div>
+                        <div class="card__mealprice">
+                            <div class="price">
+                                <p>23€</p>
+                            </div>
+                        </div>
+                        <div class="pickmeal">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaur-menu__btn">
+                    <div class="button"><a href="#order">Commander</a></div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <img src="../assets/logo/ohmyfood@2x.svg" alt="footer logo">
+            <ul>
+                <li><a href="#"><i class="fa-solid fa-utensils"></i>Proposer un restaurant</a></li>
+                <li><a href="#"><i class="fa-solid fa-handshake-angle"></i>Devenir partenaire</a></li>
+                <li><a href="#">Mentions légales</a></li>
+                <li><a href="mailto:#">Contact</a></li>
+            </ul>
+        </footer>
 
-        </div>
-    </body>
+
+    </div>
+</body>
 
 
 </html>

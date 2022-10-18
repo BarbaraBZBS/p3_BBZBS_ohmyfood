@@ -25,6 +25,10 @@ ul {
   list-style: none;
 }
 
+.fa-regular {
+  min-width: 32px;
+}
+
 /*header, footer*/
 #homepage-main_wrapper, #lddspage-main_wrapper, #alfpage-main_wrapper, #lnepage-main_wrapper, #lpgpage-main_wrapper {
   padding: 0;
@@ -217,6 +221,7 @@ footer .fa-handshake-angle {
   margin-right: 0.5714285714em;
   font-size: clamp(0.4rem, 8vw, 1.3rem);
   color: #101010;
+  height: 36px;
 }
 @media screen and (min-width: 769px) {
   .locate-form__btn {
@@ -331,10 +336,10 @@ footer .fa-handshake-angle {
     margin: 2%;
   }
 }
-.pres-section__card:hover {
+.pres-section__card:hover, .pres-section__card:active, .pres-section__card:focus {
   background: #f2eafb;
 }
-.pres-section__card:hover .card__icon {
+.pres-section__card:hover .card__icon, .pres-section__card:active .card__icon, .pres-section__card:focus .card__icon {
   color: #9356DC;
 }
 .pres-section__card .card__number {
@@ -493,7 +498,7 @@ footer .fa-handshake-angle {
   font-size: clamp(0.5rem, 8vw, 1.5rem);
   color: #101010;
 }
-.restaur-section__card .card__btn:active .fa-heart {
+.restaur-section__card .card__btn:hover .fa-heart, .restaur-section__card .card__btn:active .fa-heart, .restaur-section__card .card__btn:focus .fa-heart {
   -webkit-animation: fill 0.3s 0.1s ease-in forwards;
   animation: fill 0.3s 0.1s ease-in forwards;
 }
@@ -551,8 +556,8 @@ footer .fa-handshake-angle {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     position: relative;
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
   }
 }
 /*menu pages*/
@@ -617,7 +622,8 @@ footer .fa-handshake-angle {
     animation: fill 0.3s 0.1s ease-in forwards;
   }
 }
-.restaur-menu__title .title__btn:active .fa-heart {
+.restaur-menu__title .title__btn:hover .fa-heart, .restaur-menu__title .title__btn:active .fa-heart, .restaur-menu__title .title__btn:focus .fa-heart {
+  -webkit-animation: fill 0.3s 0.1s ease-in forwards;
   animation: fill 0.3s 0.1s ease-in forwards;
 }
 .restaur-menu__title .title__btn .fa-heart {
@@ -705,32 +711,35 @@ footer .fa-handshake-angle {
     animation: mshrink 0.4s 0.1s linear forwards, mshrink 0.5s 3.3s linear forwards reverse;
   }
 }
-.restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealprice {
+.restaur-menu .restaur-menu__cards .restaur-menu__card:hover .card__mealprice, .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealprice, .restaur-menu .restaur-menu__cards .restaur-menu__card:focus .card__mealprice {
+  -webkit-animation: pslide 0.2s 0.2s linear forwards, pslide 0.4s 3.1s linear forwards reverse;
   animation: pslide 0.2s 0.2s linear forwards, pslide 0.4s 3.1s linear forwards reverse;
 }
-.restaur-menu .restaur-menu__cards .restaur-menu__card:active .pickmeal {
+.restaur-menu .restaur-menu__cards .restaur-menu__card:hover .pickmeal, .restaur-menu .restaur-menu__cards .restaur-menu__card:active .pickmeal, .restaur-menu .restaur-menu__cards .restaur-menu__card:focus .pickmeal {
+  -webkit-animation: slide 0.3s 0.1s linear forwards, slide 0.4s 3.1s linear forwards reverse;
   animation: slide 0.3s 0.1s linear forwards, slide 0.4s 3.1s linear forwards reverse;
 }
-.restaur-menu .restaur-menu__cards .restaur-menu__card:active .pickmeal .fa-circle-check {
+.restaur-menu .restaur-menu__cards .restaur-menu__card:hover .pickmeal .fa-circle-check, .restaur-menu .restaur-menu__cards .restaur-menu__card:active .pickmeal .fa-circle-check, .restaur-menu .restaur-menu__cards .restaur-menu__card:focus .pickmeal .fa-circle-check {
+  -webkit-animation: checked 0.6s 0.2s forwards, checked 0.3s 3.2s forwards reverse;
   animation: checked 0.6s 0.2s forwards, checked 0.3s 3.2s forwards reverse;
 }
 @media screen and (max-width: 280px) {
-  .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo {
+  .restaur-menu .restaur-menu__cards .restaur-menu__card:hover .card__mealinfo, .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo, .restaur-menu .restaur-menu__cards .restaur-menu__card:focus .card__mealinfo {
     animation: xsmshrink 0.4s 0.1s linear forwards, sxmshrink 0.5s 3.3s linear forwards reverse;
   }
 }
 @media screen and (min-width: 280px) and (max-width: 320px) {
-  .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo {
+  .restaur-menu .restaur-menu__cards .restaur-menu__card:hover .card__mealinfo, .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo, .restaur-menu .restaur-menu__cards .restaur-menu__card:focus .card__mealinfo {
     animation: smshrink 0.4s 0.1s linear forwards, smshrink 0.5s 3.3s linear forwards reverse;
   }
 }
 @media screen and (min-width: 320px) and (max-width: 420px) {
-  .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo {
+  .restaur-menu .restaur-menu__cards .restaur-menu__card:hover .card__mealinfo, .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo, .restaur-menu .restaur-menu__cards .restaur-menu__card:focus .card__mealinfo {
     animation: mmshrink 0.4s 0.1s linear forwards, mmshrink 0.5s 3.3s linear forwards reverse;
   }
 }
 @media screen and (min-width: 420px) and (max-width: 507px) {
-  .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo {
+  .restaur-menu .restaur-menu__cards .restaur-menu__card:hover .card__mealinfo, .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo, .restaur-menu .restaur-menu__cards .restaur-menu__card:focus .card__mealinfo {
     animation: mshrink 0.4s 0.1s linear forwards, mshrink 0.5s 3.3s linear forwards reverse;
   }
 }
@@ -768,32 +777,35 @@ footer .fa-handshake-angle {
     animation: mshrink 0.4s 0.1s linear forwards, mshrink 0.5s 3.3s linear forwards reverse;
   }
 }
-.restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealprice {
+.restaur-menu .restaur-menu__cards .restaur-menu__card:hover .card__mealprice, .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealprice, .restaur-menu .restaur-menu__cards .restaur-menu__card:focus .card__mealprice {
+  -webkit-animation: pslide 0.2s 0.2s linear forwards, pslide 0.4s 3.1s linear forwards reverse;
   animation: pslide 0.2s 0.2s linear forwards, pslide 0.4s 3.1s linear forwards reverse;
 }
-.restaur-menu .restaur-menu__cards .restaur-menu__card:active .pickmeal {
+.restaur-menu .restaur-menu__cards .restaur-menu__card:hover .pickmeal, .restaur-menu .restaur-menu__cards .restaur-menu__card:active .pickmeal, .restaur-menu .restaur-menu__cards .restaur-menu__card:focus .pickmeal {
+  -webkit-animation: slide 0.3s 0.1s linear forwards, slide 0.4s 3.1s linear forwards reverse;
   animation: slide 0.3s 0.1s linear forwards, slide 0.4s 3.1s linear forwards reverse;
 }
-.restaur-menu .restaur-menu__cards .restaur-menu__card:active .pickmeal .fa-circle-check {
+.restaur-menu .restaur-menu__cards .restaur-menu__card:hover .pickmeal .fa-circle-check, .restaur-menu .restaur-menu__cards .restaur-menu__card:active .pickmeal .fa-circle-check, .restaur-menu .restaur-menu__cards .restaur-menu__card:focus .pickmeal .fa-circle-check {
+  -webkit-animation: checked 0.6s 0.2s forwards, checked 0.3s 3.2s forwards reverse;
   animation: checked 0.6s 0.2s forwards, checked 0.3s 3.2s forwards reverse;
 }
 @media screen and (max-width: 280px) {
-  .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo {
+  .restaur-menu .restaur-menu__cards .restaur-menu__card:hover .card__mealinfo, .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo, .restaur-menu .restaur-menu__cards .restaur-menu__card:focus .card__mealinfo {
     animation: xsmshrink 0.4s 0.1s linear forwards, sxmshrink 0.5s 3.3s linear forwards reverse;
   }
 }
 @media screen and (min-width: 280px) and (max-width: 320px) {
-  .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo {
+  .restaur-menu .restaur-menu__cards .restaur-menu__card:hover .card__mealinfo, .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo, .restaur-menu .restaur-menu__cards .restaur-menu__card:focus .card__mealinfo {
     animation: smshrink 0.4s 0.1s linear forwards, smshrink 0.5s 3.3s linear forwards reverse;
   }
 }
 @media screen and (min-width: 320px) and (max-width: 420px) {
-  .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo {
+  .restaur-menu .restaur-menu__cards .restaur-menu__card:hover .card__mealinfo, .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo, .restaur-menu .restaur-menu__cards .restaur-menu__card:focus .card__mealinfo {
     animation: mmshrink 0.4s 0.1s linear forwards, mmshrink 0.5s 3.3s linear forwards reverse;
   }
 }
 @media screen and (min-width: 420px) and (max-width: 507px) {
-  .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo {
+  .restaur-menu .restaur-menu__cards .restaur-menu__card:hover .card__mealinfo, .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo, .restaur-menu .restaur-menu__cards .restaur-menu__card:focus .card__mealinfo {
     animation: mshrink 0.4s 0.1s linear forwards, mshrink 0.5s 3.3s linear forwards reverse;
   }
 }
@@ -831,32 +843,35 @@ footer .fa-handshake-angle {
     animation: mshrink 0.4s 0.1s linear forwards, mshrink 0.5s 3.3s linear forwards reverse;
   }
 }
-.restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealprice {
+.restaur-menu .restaur-menu__cards .restaur-menu__card:hover .card__mealprice, .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealprice, .restaur-menu .restaur-menu__cards .restaur-menu__card:focus .card__mealprice {
+  -webkit-animation: pslide 0.2s 0.2s linear forwards, pslide 0.4s 3.1s linear forwards reverse;
   animation: pslide 0.2s 0.2s linear forwards, pslide 0.4s 3.1s linear forwards reverse;
 }
-.restaur-menu .restaur-menu__cards .restaur-menu__card:active .pickmeal {
+.restaur-menu .restaur-menu__cards .restaur-menu__card:hover .pickmeal, .restaur-menu .restaur-menu__cards .restaur-menu__card:active .pickmeal, .restaur-menu .restaur-menu__cards .restaur-menu__card:focus .pickmeal {
+  -webkit-animation: slide 0.3s 0.1s linear forwards, slide 0.4s 3.1s linear forwards reverse;
   animation: slide 0.3s 0.1s linear forwards, slide 0.4s 3.1s linear forwards reverse;
 }
-.restaur-menu .restaur-menu__cards .restaur-menu__card:active .pickmeal .fa-circle-check {
+.restaur-menu .restaur-menu__cards .restaur-menu__card:hover .pickmeal .fa-circle-check, .restaur-menu .restaur-menu__cards .restaur-menu__card:active .pickmeal .fa-circle-check, .restaur-menu .restaur-menu__cards .restaur-menu__card:focus .pickmeal .fa-circle-check {
+  -webkit-animation: checked 0.6s 0.2s forwards, checked 0.3s 3.2s forwards reverse;
   animation: checked 0.6s 0.2s forwards, checked 0.3s 3.2s forwards reverse;
 }
 @media screen and (max-width: 280px) {
-  .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo {
+  .restaur-menu .restaur-menu__cards .restaur-menu__card:hover .card__mealinfo, .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo, .restaur-menu .restaur-menu__cards .restaur-menu__card:focus .card__mealinfo {
     animation: xsmshrink 0.4s 0.1s linear forwards, sxmshrink 0.5s 3.3s linear forwards reverse;
   }
 }
 @media screen and (min-width: 280px) and (max-width: 320px) {
-  .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo {
+  .restaur-menu .restaur-menu__cards .restaur-menu__card:hover .card__mealinfo, .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo, .restaur-menu .restaur-menu__cards .restaur-menu__card:focus .card__mealinfo {
     animation: smshrink 0.4s 0.1s linear forwards, smshrink 0.5s 3.3s linear forwards reverse;
   }
 }
 @media screen and (min-width: 320px) and (max-width: 420px) {
-  .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo {
+  .restaur-menu .restaur-menu__cards .restaur-menu__card:hover .card__mealinfo, .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo, .restaur-menu .restaur-menu__cards .restaur-menu__card:focus .card__mealinfo {
     animation: mmshrink 0.4s 0.1s linear forwards, mmshrink 0.5s 3.3s linear forwards reverse;
   }
 }
 @media screen and (min-width: 420px) and (max-width: 507px) {
-  .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo {
+  .restaur-menu .restaur-menu__cards .restaur-menu__card:hover .card__mealinfo, .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo, .restaur-menu .restaur-menu__cards .restaur-menu__card:focus .card__mealinfo {
     animation: mshrink 0.4s 0.1s linear forwards, mshrink 0.5s 3.3s linear forwards reverse;
   }
 }
@@ -894,32 +909,35 @@ footer .fa-handshake-angle {
     animation: mshrink 0.4s 0.1s linear forwards, mshrink 0.5s 3.3s linear forwards reverse;
   }
 }
-.restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealprice {
+.restaur-menu .restaur-menu__cards .restaur-menu__card:hover .card__mealprice, .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealprice, .restaur-menu .restaur-menu__cards .restaur-menu__card:focus .card__mealprice {
+  -webkit-animation: pslide 0.2s 0.2s linear forwards, pslide 0.4s 3.1s linear forwards reverse;
   animation: pslide 0.2s 0.2s linear forwards, pslide 0.4s 3.1s linear forwards reverse;
 }
-.restaur-menu .restaur-menu__cards .restaur-menu__card:active .pickmeal {
+.restaur-menu .restaur-menu__cards .restaur-menu__card:hover .pickmeal, .restaur-menu .restaur-menu__cards .restaur-menu__card:active .pickmeal, .restaur-menu .restaur-menu__cards .restaur-menu__card:focus .pickmeal {
+  -webkit-animation: slide 0.3s 0.1s linear forwards, slide 0.4s 3.1s linear forwards reverse;
   animation: slide 0.3s 0.1s linear forwards, slide 0.4s 3.1s linear forwards reverse;
 }
-.restaur-menu .restaur-menu__cards .restaur-menu__card:active .pickmeal .fa-circle-check {
+.restaur-menu .restaur-menu__cards .restaur-menu__card:hover .pickmeal .fa-circle-check, .restaur-menu .restaur-menu__cards .restaur-menu__card:active .pickmeal .fa-circle-check, .restaur-menu .restaur-menu__cards .restaur-menu__card:focus .pickmeal .fa-circle-check {
+  -webkit-animation: checked 0.6s 0.2s forwards, checked 0.3s 3.2s forwards reverse;
   animation: checked 0.6s 0.2s forwards, checked 0.3s 3.2s forwards reverse;
 }
 @media screen and (max-width: 280px) {
-  .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo {
+  .restaur-menu .restaur-menu__cards .restaur-menu__card:hover .card__mealinfo, .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo, .restaur-menu .restaur-menu__cards .restaur-menu__card:focus .card__mealinfo {
     animation: xsmshrink 0.4s 0.1s linear forwards, sxmshrink 0.5s 3.3s linear forwards reverse;
   }
 }
 @media screen and (min-width: 280px) and (max-width: 320px) {
-  .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo {
+  .restaur-menu .restaur-menu__cards .restaur-menu__card:hover .card__mealinfo, .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo, .restaur-menu .restaur-menu__cards .restaur-menu__card:focus .card__mealinfo {
     animation: smshrink 0.4s 0.1s linear forwards, smshrink 0.5s 3.3s linear forwards reverse;
   }
 }
 @media screen and (min-width: 320px) and (max-width: 420px) {
-  .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo {
+  .restaur-menu .restaur-menu__cards .restaur-menu__card:hover .card__mealinfo, .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo, .restaur-menu .restaur-menu__cards .restaur-menu__card:focus .card__mealinfo {
     animation: mmshrink 0.4s 0.1s linear forwards, mmshrink 0.5s 3.3s linear forwards reverse;
   }
 }
 @media screen and (min-width: 420px) and (max-width: 507px) {
-  .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo {
+  .restaur-menu .restaur-menu__cards .restaur-menu__card:hover .card__mealinfo, .restaur-menu .restaur-menu__cards .restaur-menu__card:active .card__mealinfo, .restaur-menu .restaur-menu__cards .restaur-menu__card:focus .card__mealinfo {
     animation: mshrink 0.4s 0.1s linear forwards, mshrink 0.5s 3.3s linear forwards reverse;
   }
 }

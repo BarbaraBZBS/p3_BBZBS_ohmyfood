@@ -5,16 +5,20 @@
     align-items: center;
     background: $color-grey;
     width: 100%;
+
     &__btn {
         border: none;
         background: $color-grey;
-        margin-right:  em(8);
+        margin-right: em(8);
         font-size: map-get($clamps, smfont-cl);
         color: $color-black;
+        height: 36px;
+
         @include ldevice {
             margin-right: em(20);
         }
     }
+
     &__input {
         border: none;
         background: $color-grey;
@@ -23,6 +27,7 @@
         text-indent: 0.5rem;
         line-height: 1.9rem;
         -webkit-appearance: none;
+
         @include ldevice {
             text-indent: 1rem;
         }
@@ -34,6 +39,7 @@
     justify-content: center;
     height: auto;
     background: $color-llgrey;
+
     h1 {
         display: flex;
         justify-content: center;
@@ -43,6 +49,7 @@
         line-height: 2.35rem;
         margin: map-get($margin-trbl, ttl1);
     }
+
     p {
         display: flex;
         justify-content: center;
@@ -51,9 +58,11 @@
         margin: map-get($margin-trbl, par1);
         text-align: center;
     }
+
     &__btn {
         display: flex;
         justify-content: center;
+
         .button {
             justify-content: center;
             font-size: map-get($font-size, smfont);
@@ -67,6 +76,7 @@
             padding: map-get($padding, smpad) 25px;
             box-shadow: map-get($box-shadow, buttn);
             @include lgradient(to right bottom, $purpgradient);
+
             &:hover {
                 @include lgradient(to right bottom, $pinkgradient);
                 box-shadow: map-get($box-shadow, buttnhovr);
@@ -79,24 +89,29 @@
     display: flex;
     flex-direction: column;
     padding-bottom: map-get($padding, lpad);
-    h2{
+
+    h2 {
         font-size: map-get($clamps, lfont-cl);
         font-weight: 900;
         margin: map-get($margin-trbl, ttl2);
+
         @include ldevice {
             margin: 50px 0 55px 6%;
         }
     }
+
     &__cards {
         display: flex;
         flex-direction: column;
         justify-content: center;
+
         @include lbdevice {
             flex-direction: row;
         }
-    
+
     }
 }
+
 .pres-section__card {
     cursor: pointer;
     display: flex;
@@ -112,18 +127,26 @@
     align-self: center;
     font-size: map-get($font-size, medfont);
     box-shadow: map-get($box-shadow, crd);
+
     @include ldevice {
         margin: 2%;
     }
-    &:hover {
+
+
+    &:hover,
+    &:active,
+    &:focus {
         background: lighten($color: $color-primary, $amount: 35);
+
         .card__icon {
             color: $color-primary;
         }
     }
+
     .card__number {
         display: flex;
         margin: -5px;
+
         p {
             background: $color-primary;
             border-radius: 30px;
@@ -135,20 +158,25 @@
             color: $color-white;
         }
     }
+
     .card__icon {
         display: flex;
         color: $color-dgrey;
         margin: 0 10%;
+
         @include tabdevice {
             margin: 0 12%;
         }
+
         @include ldevice {
             margin: 0 15%;
         }
+
         @include lbdevice {
             margin: 0 11%;
         }
     }
+
     .card__instruct {
         display: flex;
         font-size: map-get($clamps, smfont-cl);
@@ -161,18 +189,22 @@
     flex-direction: column;
     padding-bottom: map-get($padding, lpad);
     background: $color-lgrey;
+
     h2 {
         font-size: map-get($clamps, lfont-cl);
         font-weight: 900;
         margin: map-get($margin-trbl, ttl3);
+
         @include ldevice {
             margin: 60px 0 65px 6%;
         }
     }
+
     &__cards {
         display: flex;
         flex-direction: column;
         justify-content: center;
+
         @include ldevice {
             flex-flow: wrap row;
         }
@@ -192,21 +224,25 @@
     height: 290px;
     align-self: center;
     margin-bottom: map-get($margin, medmarg);
-    box-shadow: 0 6px 16px -5px rgba(0, 0, 0, 0.2) ;
+    box-shadow: 0 6px 16px -5px rgba(0, 0, 0, 0.2);
+
     @include ldevice {
         width: 44%;
         max-width: 90%;
         min-width: 0;
         margin: 20px;
     }
+
     a {
         height: 290px;
     }
+
     .card__img {
         width: 100%;
         height: 200px;
         padding: 0;
         margin: 0;
+
         img {
             object-fit: cover;
             height: 200px;
@@ -214,64 +250,83 @@
             border-top-left-radius: 30px;
             border-top-right-radius: 30px;
         }
+
         .new {
             position: absolute;
             color: darken($color: $color-tertiary, $amount: 34);
             font-weight: 600;
-            padding: 6px map-get($padding, xsmpad) +5px ;
+            padding: 6px map-get($padding, xsmpad) + 5px;
             right: 20px;
             top: 5px;
             background: $color-tertiary;
             border-radius: 3px;
         }
     }
+
     .card__body {
         display: flex;
         height: 90px;
     }
+
     .card__info {
         color: $color-black;
         width: 80%;
         margin: 15px;
+
         h3 {
             font-weight: 600;
             font-size: map-get($clamps, smfont-cl);
             margin: 0 0 5px 0;
         }
+
         p {
             font-size: map-get($clamps, xsmfont-cl);
             margin: 0;
         }
     }
+
     .card__fav {
         width: 20%;
         align-self: center;
         text-align: center;
     }
+
     .card__btn {
         position: absolute;
         bottom: 30px;
         right: 21px;
         border: none;
         background: $color-white;
+
         @include ldevice {
             &:hover {
                 .fa-heart {
                     -webkit-animation: fill .3s .1s ease-in forwards;
                     animation: fill .3s .1s ease-in forwards;
-                  }    
+                }
             }
-        }      
+        }
+
         .fa-heart {
             font-size: map-get($clamps, mfont-cl);
             color: $color-black;
-            }
-        &:active {
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
             .fa-heart {
                 -webkit-animation: fill .3s .1s ease-in forwards;
                 animation: fill .3s .1s ease-in forwards;
-              }
+            }
         }
+
+        // &:active {
+        //     .fa-heart {
+        //         -webkit-animation: none;
+        //         animation: none;
+        //     }
+        // }
     }
 
 }
@@ -279,33 +334,37 @@
 
 @keyframes fill {
     0% {
-      @include colorfill;
-      opacity: 0;
+        @include colorfill;
+        opacity: 0;
     }
+
     25% {
-      font-weight: bold;
-      @include colorfill;
-      opacity: 0.60;
-      -webkit-transform: scale(0.25);
-      transform: scale(0.25);
+        font-weight: bold;
+        @include colorfill;
+        opacity: 0.60;
+        -webkit-transform: scale(0.25);
+        transform: scale(0.25);
     }
+
     40% {
-      font-weight: bold;
-      @include colorfill;
-      opacity: 0.75;
-      -webkit-transform: scale(0.5);
-      transform: scale(0.5);
+        font-weight: bold;
+        @include colorfill;
+        opacity: 0.75;
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
     }
+
     65% {
-      @include colorfill;
-      opacity: 0.85;
-      -webkit-transform: scale(0.75);
-      transform: scale(0.75);
+        @include colorfill;
+        opacity: 0.85;
+        -webkit-transform: scale(0.75);
+        transform: scale(0.75);
     }
+
     100% {
-      font-weight: bold;
-      @include colorfill;
-      -webkit-transform: scale(1.2);
-      transform: scale(1.2);
+        font-weight: bold;
+        @include colorfill;
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
     }
-  }
+}
